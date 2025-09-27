@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Steel 8 Line - Blue | IKETA</title>
+
+  <!-- 공통 -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- 상세 전용 -->
+  <link rel="stylesheet" href="product.css" />
+
+  <!-- 아이콘 -->
+  <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+  <!-- 헤더 (메인과 동일) -->
+  <header class="header">
+    <a href="/" class="brand">IKETA</a>
+    <div class="icons" aria-label="site menu">
+      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+      <i class="fa-regular fa-user" aria-hidden="true"></i>
+      <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
+    </div>
+  </header>
+
+  <main class="pdp">
+    <!-- 브레드크럼 -->
+    <nav class="pdp-breadcrumb">
+      <a href="/">Home</a> <span>›</span>
+      <a href="/#products">Products</a> <span>›</span>
+      <span>Steel 8 Line - Blue</span>
+    </nav>
+
+    <!-- 상단: 갤러리 + 정보(정보 sticky) -->
+    <section class="pdp-top">
+      <!-- 갤러리 -->
+      <div class="pdp-gallery">
+        <div class="pdp-hero">
+          <img id="pdp-hero" src="./images/detail/steel8-blue-1.jpg" alt="Steel 8 Line - Blue 메인 이미지">
+        </div>
+        <div class="pdp-thumbs">
+          <img class="is-active" src="./images/detail/steel8-blue-1.jpg" data-full="./images/detail/steel8-blue-1.jpg" alt="썸네일 1">
+          <img src="./images/detail/steel8-blue-2.jpg" data-full="./images/detail/steel8-blue-2.jpg" alt="썸네일 2">
+          <img src="./images/detail/steel8-blue-3.jpg" data-full="./images/detail/steel8-blue-3.jpg" alt="썸네일 3">
+          <img src="./images/detail/steel8-blue-4.jpg" data-full="./images/detail/steel8-blue-4.jpg" alt="썸네일 4">
+        </div>
+      </div>
+
+      <!-- 정보/구매 -->
+      <aside class="pdp-info">
+        <h1 class="pdp-title">Steel 8 Line - Blue</h1>
+        <p class="pdp-price">₩55,000</p>
+
+        <!-- 옵션: 사이즈(칩), 수량 -->
+        <div class="pdp-options">
+          <div class="pdp-field">
+            <span>사이즈</span>
+            <div class="pdp-size">
+              <button type="button" class="size-btn is-selected" data-size="S">S (15cm)</button>
+              <button type="button" class="size-btn" data-size="XS">XS (16cm)</button>
+              <button type="button" class="size-btn" data-size="M">M (17cm)</button>
+              <button type="button" class="size-btn" data-size="L">L (18cm)</button>
+            </div>
+          </div>
+
+            <span>수량</span>
+            <div class="pdp-qtybox">
+              <button type="button" class="pdp-qtybtn" data-delta="-1" aria-label="수량 감소">−</button>
+              <input id="pdp-qty" type="number" value="1" min="1" inputmode="numeric" aria-label="수량">
+              <button type="button" class="pdp-qtybtn" data-delta="1" aria-label="수량 증가">+</button>
+            </div>
+          </label>
+        </div>
+
+        <div class="pdp-actions">
+          <button class="pdp-btn pdp-buy">바로 구매</button>
+          <button class="pdp-btn pdp-cart">장바구니</button>
+        </div>
+
+        <ul class="pdp-bullets">
+          <li>Handmade · 제작 3–5일</li>
+          <li>Skin-safe 스테인리스 마감</li>
+          <li>무료 리사이즈 & AS</li>
+        </ul>
+      </aside>
+    </section>
+
+    <!-- 아래로 길게: 스토리 이미지 -->
+    <section class="pdp-immersion">
+      <figure><img src="./images/detail/story-1.jpg" alt="브레이드 디테일"></figure>
+      <figure><img src="./images/detail/story-2.jpg" alt="손목 착용 컷"></figure>
+      <figure><img src="./images/detail/story-3.jpg" alt="가죽/스틸 디테일"></figure>
+      <figure><img src="./images/detail/story-4.jpg" alt="패키징 이미지"></figure>
+    </section>
+
+    <!-- 상세/소재/배송/관리 -->
+    <section class="pdp-detail">
+      <details open>
+        <summary>제품 설명</summary>
+        <p>희귀한 매듭 공법으로 제작된 8라인 시리즈. 심플한 실루엣 속에 깊은 텐션과 볼륨을 담았습니다.</p>
+      </details>
+      <details>
+        <summary>소재 & 규격</summary>
+        <ul>
+          <li>소재: 스테인리스, 가죽</li>
+          <li>무게: 약 18g</li>
+          <li>제조: Korea (Handmade)</li>
+        </ul>
+      </details>
+      <details>
+        <summary>배송 & 교환</summary>
+        <p>제작 3–5일 후 발송. 수령 7일 이내 미사용 제품 교환/반품 가능.</p>
+      </details>
+      <details>
+        <summary>관리 방법</summary>
+        <p>물·땀 접촉 후 마른 천으로 닦아 보관. 장기간 미착용 시 지퍼백 보관 권장.</p>
+      </details>
+    </section>
+
+    <!-- 연관상품 (선택) -->
+    <section class="pdp-related">
+      <h2 class="pdp-rel-title">Related</h2>
+      <div class="pdp-rel-grid">
+        <a class="pdp-rel-card" href="product.html?id=steel8-brown">
+          <img src="./images/product-list/bracelet12.jpg" alt="Steel 8 Line - Brown">
+          <p>Steel 8 Line - Brown</p><span>₩55,000</span>
+        </a>
+        <a class="pdp-rel-card" href="product.html?id=steel8-black">
+          <img src="./images/product-list/bracelet13.jpg" alt="Steel 8 Line - Black">
+          <p>Steel 8 Line - Black</p><span>₩55,000</span>
+        </a>
+        <a class="pdp-rel-card" href="product.html?id=steel8-red">
+          <img src="./images/product-list/bracelet14.jpg" alt="Steel 8 Line - Red">
+          <p>Steel 8 Line - Red</p><span>₩55,000</span>
+        </a>
+        <a class="pdp-rel-card" href="product.html?id=steel8-green">
+          <img src="./images/product-list/bracelet15.jpg" alt="Steel 8 Line - Green">
+          <p>Steel 8 Line - Green</p><span>₩55,000</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- 푸터 (메인과 동일) -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">IKETA</p>
+      <div class="footer-sns">
+        <a href="#" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+        <a href="#" aria-label="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      <p class="footer-copy">© 2025 IKETA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- 상세 전용 JS -->
+  <script src="product.js"></script>
+</body>
+</html>
