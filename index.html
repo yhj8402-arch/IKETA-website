@@ -10,16 +10,43 @@
 <body>
 
   <!-- 헤더 -->
-  <header class="header">
-    <!-- 왼쪽: 브랜드 -->
-    <div class="brand">IKETA</div>
-    <!-- 오른쪽: 아이콘 -->
-    <div class="icons">
-      <i class="fa-solid fa-magnifying-glass"></i> <!-- 검색 -->
-      <i class="fa-regular fa-user"></i>           <!-- 마이페이지 -->
-      <i class="fa-solid fa-bag-shopping"></i>     <!-- 장바구니 -->
+<header class="header">
+  <!-- 왼쪽: 브랜드 -->
+  <div class="brand" id="brandMenuTrigger">IKETA</div>
+
+  <!-- 오른쪽: 아이콘 -->
+  <div class="icons">
+    <i class="fa-solid fa-magnifying-glass"></i> <!-- 검색 -->
+    <div class="cart-wrapper" id="cartIcon">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span class="cart-badge" id="cartCount">0</span>
     </div>
-  </header>
+  </div>
+
+  <!-- 검색창 오버레이 -->
+  <div id="searchOverlay" class="search-overlay hidden">
+    <div class="search-box">
+      <input type="text" placeholder="검색어를 입력하세요" autocomplete="off">
+      <button id="closeSearch">×</button>
+    </div>
+  </div>
+
+  <!-- 종이 드롭다운 메뉴 -->
+<div id="brandDropdown" class="brand-dropdown hidden">
+  <button class="close-dropdown">&minus;</button> <!-- ← X 대신 - -->
+   <!-- Spotlight 스타일 검색창 -->
+   <div class="brand-search">
+    <label for="brandSearch" class="sr-only">브랜드 검색</label>
+    <input id="brandSearch" type="text" placeholder="IKETA" />
+  </div>
+  <ul>
+    <li><a href="intro.html">브랜드 스토리</a></li>
+    <li><a href="store.html">스토어</a></li>
+    <li><a href="voice.html">고객의 소리</a></li>
+    <li><a href="cart.html">장바구니</a></li>
+  </ul>
+</div>
+</header>
 
     <!-- 메인 슬라이드 -->
     <section class="hero-slider">
@@ -81,14 +108,14 @@
       </section>
       <!-- 섹션 3-1: 브랜드 소개 버튼 -->
       <section class="brand-more">
-        <a href="brand.html" class="brand-btn">브랜드를 소개합니다</a>
+        <a class="brand-btn" id="intro-brand">브랜드를 소개합니다</a>
       </section>
 
     <!-- 섹션 4: 제품 리스트 -->
 <section class="plist">
     <div class="plist-grid">
       <!-- 1~15 카드 -->
-      <div class="plist-card">
+      <div class="plist-card" data-id="S6-BLUE">
         <img src="./images/product-list/bracelet1.jpg" alt="Bracelet 1">
         <p class="plist-name">Steel 6 Line - Blue</p>
         <p class="plist-price">₩49,000</p>
@@ -200,5 +227,6 @@
     </div>
   </footer>
   <script src="script.js"></script>
+  <script src="product.js"></script>
 </body>
 </html>

@@ -130,3 +130,94 @@ body { background:#fafafa; }
 @media (max-width: 480px){
   .pdp-rel-grid{ grid-template-columns:1fr; }
 }
+
+.cart-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.cart-modal-content {
+  background: #fff;
+  padding: 30px 40px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hidden { display: none; }
+
+/* ===== 사이즈 도움말 모달 (이미지 크기 제한) ===== */
+#sizeHelpModal .box {
+  background: #fff;
+  padding: 16px;
+  border-radius: 10px;
+  text-align: center;
+  display: inline-block;   /* 내용 크기에 맞게 */
+}
+
+.size-help-img {
+  max-width: 240px;   /* 👉 이미지 크기 제한 (적당히 작게) */
+  height: auto;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+#sizeHelpModal h2 {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+#sizeHelpModal .close-btn {
+  padding: 6px 12px;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+#sizeHelpModal .close-btn:hover {
+  background: #555;
+}
+.size-help-btn {
+  margin-left: 8px;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  padding: 0;
+  position: relative; /* 툴팁 위치 잡기 */
+}
+
+/* hover 시 툴팁 띄우기 */
+.size-help-btn::after {
+  content: "손목 사이즈 측정법";
+  position: absolute;
+  bottom: 120%; /* 버튼 위쪽에 나오게 */
+  left: 50%;
+  transform: translateX(-50%);
+  background: #333;
+  color: #fff;
+  font-size: 12px;
+  padding: 4px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+
+.size-help-btn:hover::after {
+  opacity: 1;
+}

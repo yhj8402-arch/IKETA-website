@@ -18,12 +18,20 @@
 <body>
   <!-- 헤더 (메인과 동일) -->
   <header class="header">
-    <a href="/" class="brand">IKETA</a>
-    <div class="icons" aria-label="site menu">
-      <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
-      <i class="fa-regular fa-user" aria-hidden="true"></i>
-      <i class="fa-solid fa-bag-shopping" aria-hidden="true"></i>
-    </div>
+    <div class="brand"><a href="index.html">IKETA</a></div>
+    <div class="icons">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <div class="cart-wrapper" id="cartIcon">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+      </div>
+      <!-- 검색창 오버레이 -->
+<div id="searchOverlay" class="search-overlay hidden">
+  <div class="search-box">
+    <input type="text" placeholder="검색어를 입력하세요" autocomplete="off">
+    <button id="closeSearch">×</button>
+  </div>
+</div>
   </header>
 
   <main class="pdp">
@@ -39,13 +47,13 @@
       <!-- 갤러리 -->
       <div class="pdp-gallery">
         <div class="pdp-hero">
-          <img id="pdp-hero" src="./images/detail/steel8-blue-1.jpg" alt="Steel 8 Line - Blue 메인 이미지">
+          <img id="pdp-hero" src="./images/detail/bracelet1.jpg" alt="Steel 8 Line - Blue 메인 이미지">
         </div>
         <div class="pdp-thumbs">
-          <img class="is-active" src="./images/detail/steel8-blue-1.jpg" data-full="./images/detail/steel8-blue-1.jpg" alt="썸네일 1">
-          <img src="./images/detail/steel8-blue-2.jpg" data-full="./images/detail/steel8-blue-2.jpg" alt="썸네일 2">
-          <img src="./images/detail/steel8-blue-3.jpg" data-full="./images/detail/steel8-blue-3.jpg" alt="썸네일 3">
-          <img src="./images/detail/steel8-blue-4.jpg" data-full="./images/detail/steel8-blue-4.jpg" alt="썸네일 4">
+          <img class="is-active" src="./images/detail/bracelet1.jpg" data-full="./images/detail/bracelet1.jpg" alt="썸네일 1">
+          <img src="./images/detail/thumbs1.jpg" data-full="./images/detail/thumbs1.jpg" alt="썸네일 2">
+          <img src="./images/detail/thumbs2.jpg" data-full="./images/detail/thumbs2.jpg" alt="썸네일 3">
+          <img src="./images/detail/thumbs3.jpg" data-full="./images/detail/thumbs3.jpg" alt="썸네일 4">
         </div>
       </div>
 
@@ -55,30 +63,33 @@
         <p class="pdp-price">₩55,000</p>
 
         <!-- 옵션: 사이즈(칩), 수량 -->
-        <div class="pdp-options">
-          <div class="pdp-field">
-            <span>사이즈</span>
-            <div class="pdp-size">
-              <button type="button" class="size-btn is-selected" data-size="S">S (15cm)</button>
-              <button type="button" class="size-btn" data-size="XS">XS (16cm)</button>
-              <button type="button" class="size-btn" data-size="M">M (17cm)</button>
-              <button type="button" class="size-btn" data-size="L">L (18cm)</button>
-            </div>
-          </div>
+<div class="pdp-options">
+  <div class="pdp-field">
+    <span>사이즈</span>
+    <div class="pdp-size">
+      <button type="button" class="size-btn" data-size="XS">XS (15cm)</button>
+      <button type="button" class="size-btn" data-size="S">S (16cm)</button>
+      <button type="button" class="size-btn" data-size="M">M (17cm)</button>
+      <button type="button" class="size-btn" data-size="L">L (18cm)</button>
+      <button type="button" class="size-btn" data-size="XL">XL (19cm)</button>
+      <!-- ❌/➕ 느낌의 원형 도움말 버튼 -->
+  <button type="button" id="sizeHelpBtn" class="size-help-btn">✚</button>
+    </div>
+  </div>
 
-            <span>수량</span>
-            <div class="pdp-qtybox">
-              <button type="button" class="pdp-qtybtn" data-delta="-1" aria-label="수량 감소">−</button>
-              <input id="pdp-qty" type="number" value="1" min="1" inputmode="numeric" aria-label="수량">
-              <button type="button" class="pdp-qtybtn" data-delta="1" aria-label="수량 증가">+</button>
-            </div>
-          </label>
-        </div>
+  <span>수량</span>
+  <div class="pdp-qtybox">
+    <button type="button" class="pdp-qtybtn" data-delta="-1" aria-label="수량 감소">−</button>
+    <input id="pdp-qty" type="number" value="1" min="1" inputmode="numeric" aria-label="수량" disabled>
+    <button type="button" class="pdp-qtybtn" data-delta="1" aria-label="수량 증가">+</button>
+  </div>
+</div>
 
-        <div class="pdp-actions">
-          <button class="pdp-btn pdp-buy">바로 구매</button>
-          <button class="pdp-btn pdp-cart">장바구니</button>
-        </div>
+<!-- 버튼 -->
+<div class="pdp-actions">
+  <button id="buyNowBtn" class="pdp-btn pdp-buy" >바로 구매</button>
+  <button id="addCartBtn" class="pdp-btn pdp-cart" >장바구니</button>
+</div>
 
         <ul class="pdp-bullets">
           <li>Handmade · 제작 3–5일</li>
@@ -155,8 +166,22 @@
       <p class="footer-copy">© 2025 IKETA. All rights reserved.</p>
     </div>
   </footer>
-
+<!-- 장바구니 모달 -->
+<div id="cartModal" class="cart-modal hidden">
+  <div class="box">
+    <p>장바구니 담는 중입니다...</p>
+  </div>
+</div>
+<!-- 사이즈 도움말 모달 -->
+<div id="sizeHelpModal" class="cart-modal hidden" aria-hidden="true">
+  <div class="box">
+    <h2>손목 사이즈 측정법</h2>
+    <img src="./images/size-guide.jpg" alt="손목 사이즈 측정법" class="size-help-img">
+    <button id="closeSizeHelp" class="close-btn" type="button">닫기</button>
+  </div>
+</div>
   <!-- 상세 전용 JS -->
+  <script src="script.js"></script>
   <script src="product.js"></script>
 </body>
 </html>
