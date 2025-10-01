@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="style.css" />
   <!-- 상세 전용 -->
   <link rel="stylesheet" href="product.css" />
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 
   <!-- 아이콘 -->
   <link rel="stylesheet"
@@ -18,7 +19,12 @@
 <body>
   <!-- 헤더 (메인과 동일) -->
   <header class="header">
-    <div class="brand"><a href="index.html">IKETA</a></div>
+    <div class="brand" id="brandMenuTrigger">
+      <a href="index.html">
+        <img src="./images/favicon.ico" alt="IKETA 로고 아이콘" class="logo-icon">
+        IKETA
+      </a>
+    </div>
     <div class="icons">
       <i class="fa-solid fa-magnifying-glass"></i>
       <div class="cart-wrapper" id="cartIcon">

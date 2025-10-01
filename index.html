@@ -6,14 +6,17 @@
   <title>IKETA</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
 </head>
 <body>
 
   <!-- 헤더 -->
 <header class="header">
   <!-- 왼쪽: 브랜드 -->
-  <div class="brand" id="brandMenuTrigger">IKETA</div>
-
+    <div class="brand" id="brandMenuTrigger">
+      <img src="./images/favicon.ico" alt="IKETA 로고 아이콘" class="logo-icon">
+      IKETA
+    </div>
   <!-- 오른쪽: 아이콘 -->
   <div class="icons">
     <i class="fa-solid fa-magnifying-glass"></i> <!-- 검색 -->
@@ -26,7 +29,7 @@
   <!-- 검색창 오버레이 -->
   <div id="searchOverlay" class="search-overlay hidden">
     <div class="search-box">
-      <input type="text" placeholder="검색어를 입력하세요" autocomplete="off">
+      <input id="searchInput" type="text" placeholder="검색어를 입력하세요" autocomplete="off">
       <button id="closeSearch">×</button>
     </div>
   </div>

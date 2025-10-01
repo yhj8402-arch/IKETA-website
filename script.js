@@ -1,20 +1,22 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const searchIcon = document.querySelector('.fa-magnifying-glass');
-    const searchOverlay = document.getElementById('searchOverlay');
-    const closeSearch = document.getElementById('closeSearch');
-  
-    if (searchIcon) {
-      searchIcon.addEventListener('click', () => {
-        searchOverlay.classList.remove('hidden');
-        document.getElementById('searchInput').focus();
-      });
-    }
-  
-    if (closeSearch) {
-      closeSearch.addEventListener('click', () => {
-        searchOverlay.classList.add('hidden');
-      });
-    }
+  const searchIcon = document.querySelector('.fa-magnifying-glass');
+  const searchOverlay = document.getElementById('searchOverlay');
+  const closeSearch = document.getElementById('closeSearch');
+  const searchInput = document.getElementById('searchInput'); // ✅ 수정: 실제 ID로 연결
+
+  if (searchIcon) {
+    searchIcon.addEventListener('click', () => {
+      searchOverlay.classList.remove('hidden');
+      setTimeout(() => searchInput.focus(), 300); // ✅ 자동 focus
+    });
+  }
+
+  if (closeSearch) {
+    closeSearch.addEventListener('click', () => {
+      searchOverlay.classList.add('hidden');
+    });
+  }
+
   // === 히어로 슬라이더 ===
   const slider = document.querySelector('.hero-slider');
   if (slider) {
@@ -86,7 +88,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
 
       if (prevBtn) prevBtn.addEventListener('click', () => go(index - 1));
-      if (nextBtn) prevBtn.addEventListener('click', () => go(index + 1));
+      if (nextBtn) nextBtn.addEventListener('click', () => go(index + 1));
       slider.addEventListener('mouseenter', stopAuto);
       slider.addEventListener('mouseleave', startAuto);
 
@@ -121,7 +123,7 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateCartBadge() {
     const cart = loadCart();
     const count = cart.reduce((sum, i) => sum + (i.qty || 1), 0);
-    const badge = document.getElementById('cartCount'); // 장바구니 숫자 요소
+    const badge = document.getElementById('cartCount');
     if (badge) badge.textContent = count;
   }
 
@@ -136,47 +138,50 @@ document.addEventListener('DOMContentLoaded', () => {
 
   window.IKETA = window.IKETA || {};
   window.IKETA.addToCart = function (item) {
-  console.log("🔥 실행된 addToCart:", item); //
-  console.log("✅ addToCart 실행됨:", item); // 실행 확인 로그
+    const cart = loadCart();
+    const idx = cart.findIndex(
+      (p) => p.id === item.id && p.size === item.size
+    );
+    if (idx > -1) {
+      cart[idx].qty += item.qty;
+    } else {
+      cart.push(item);
+    }
+    saveCart(cart);
+    syncCartBadge();
+  };
 
-  const cart = loadCart();
-  const idx = cart.findIndex(
-    (p) => p.id === item.id && p.size === item.size
-  );
-  if (idx > -1) {
-    cart[idx].qty += item.qty;
-  } else {
-    cart.push(item);
+  // === 장바구니 아이콘 클릭 → 장바구니 페이지 이동 ===
+  const cartIcon = document.getElementById('cartIcon');
+  if (cartIcon) {
+    cartIcon.addEventListener('click', () => {
+      window.location.href = 'cart.html';
+    });
   }
-  saveCart(cart);
-  console.log("✅ 저장된 카트:", cart); // 저장 상태 확인
 
-  syncCartBadge();
-};
-// === 장바구니 아이콘 클릭 → 장바구니 페이지 이동 ===
-const cartIcon = document.getElementById('cartIcon');
-if (cartIcon) {
-  cartIcon.addEventListener('click', () => {
-    window.location.href = 'cart.html';
-  });
-}
-// === 계속 쇼핑하기 버튼 동작 ===
-const introBrandBtn = document.getElementById('intro-brand');
-if (introBrandBtn) {
-  introBrandBtn.addEventListener('click', (e) => {
-    e.preventDefault(); // 혹시라도 href 남아있을 때 기본 이동 방지
-    window.location.href = 'intro.html';
-  });
-}
-// === 브랜드 드롭다운 ===
+  // === 계속 쇼핑하기 버튼 동작 ===
+  const introBrandBtn = document.getElementById('intro-brand');
+  if (introBrandBtn) {
+    introBrandBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.location.href = 'intro.html';
+    });
+  }
+
+  // === 브랜드 드롭다운 ===
+  // === 브랜드 드롭다운 ===
 const brandTrigger = document.getElementById('brandMenuTrigger');
 const brandDropdown = document.getElementById('brandDropdown');
 const closeDropdown = document.querySelector('.close-dropdown');
+const brandSearchInput = document.getElementById('brandSearch'); // ✅ 패널 검색창 input
 
 if (brandTrigger && brandDropdown) {
   // 브랜드에 마우스 올리면 열림
   brandTrigger.addEventListener('mouseenter', () => {
     brandDropdown.classList.add('open');
+    setTimeout(() => {
+      if (brandSearchInput) brandSearchInput.focus(); // ✅ 열리자마자 자동 focus
+    }, 300);
   });
 
   // 패널 영역 벗어나면 닫힘
