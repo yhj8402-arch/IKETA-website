@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>연습 상세페이지</title>
+  <style>
+    body { font-family: sans-serif; padding: 20px; }
+    h1 { margin-bottom: 20px; }
+
+    .pdp-field { margin-bottom: 20px; }
+    .selected-block {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 8px 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .selected-block span { font-weight: 500; }
+    .qty-box { display: flex; align-items: center; gap: 6px; }
+    .qty-btn {
+      width: 24px; height: 24px;
+      border: 1px solid #333;
+      border-radius: 4px;
+      background: #fff;
+      cursor: pointer;
+    }
+    .qty-input {
+      width: 40px; text-align: center;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .remove-btn {
+      margin-left: auto;
+      border: none;
+      background: none;
+      font-size: 18px;
+      cursor: pointer;
+      color: #666;
+    }
+    .remove-btn:hover { color: #000; }
+
+    #cartResult { margin-top: 20px; padding: 10px; border: 1px solid #aaa; }
+  </style>
+</head>
+<body>
+
+<h1>연습용 상품 상세페이지</h1>
+
+<div class="pdp-field">
+  <label for="sizeSelect">[필수] 옵션을 선택해주세요</label>
+  <select id="sizeSelect">
+    <option value="">옵션을 선택해주세요</option>
+    <option value="16">16 cm</option>
+    <option value="17">17 cm</option>
+    <option value="18">18 cm</option>
+    <option value="19">19 cm</option>
+  </select>
+</div>
+
+<!-- ✅ 선택된 옵션 블록들이 여기에 쌓임 -->
+<div id="selectedSizes"></div>
+
+<button id="addCartBtn">장바구니 담기</button>
+
+<div id="cartResult"></div>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const sizeSelect = document.getElementById('sizeSelect');
+  const selectedSizes = document.getElementById('selectedSizes');
+  const addCartBtn = document.getElementById('addCartBtn');
+  const cartResult = document.getElementById('cartResult');
+
+  if (sizeSelect) {
+    sizeSelect.addEventListener('change', () => {
+      const value = sizeSelect.value;
+      if (!value) return;
+
+      // 이미 선택된 사이즈면 중복 방지
+      if (selectedSizes.querySelector(`[data-size="${value}"]`)) {
+        alert(`${value}cm 사이즈는 이미 선택되었습니다.`);
+        sizeSelect.value = "";
+        return;
+      }
+
+      // ✅ 블록 생성 (사이즈 + 수량조절 + 삭제)
+      const block = document.createElement('div');
+      block.className = 'selected-block';
+      block.dataset.size = value;
+      block.innerHTML = `
+        <span>${value}cm</span>
+        <div class="qty-box">
+          <button class="qty-btn" data-delta="-1">-</button>
+          <input type="number" value="1" min="1" class="qty-input" readonly>
+          <button class="qty-btn" data-delta="1">+</button>
+        </div>
+        <button class="remove-btn">&times;</button>
+      `;
+
+      // 수량 버튼 이벤트
+      const qtyInput = block.querySelector('.qty-input');
+      block.querySelectorAll('.qty-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const delta = parseInt(btn.dataset.delta, 10);
+          let newQty = Math.max(1, parseInt(qtyInput.value) + delta);
+          qtyInput.value = newQty;
+        });
+      });
+
+      // 삭제 버튼 이벤트
+      block.querySelector('.remove-btn').addEventListener('click', () => {
+        block.remove();
+      });
+
+      selectedSizes.appendChild(block);
+      sizeSelect.value = "";
+    });
+  }
+
+  // ✅ 장바구니 담기 → 선택된 모든 블록을 수집
+  addCartBtn.addEventListener('click', () => {
+    const blocks = selectedSizes.querySelectorAll('.selected-block');
+    if (!blocks.length) {
+      alert("사이즈를 하나 이상 선택하세요.");
+      return;
+    }
+
+    const cart = [];
+    blocks.forEach(block => {
+      const size = block.dataset.size;
+      const qty = block.querySelector('.qty-input').value;
+      cart.push({ size, qty });
+    });
+
+    cartResult.innerHTML = "<b>장바구니:</b><br>" + 
+      cart.map(item => `${item.size}cm × ${item.qty}`).join("<br>");
+  });
+});
+</script>
+
+</body>
+</html>

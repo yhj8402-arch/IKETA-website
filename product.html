@@ -68,28 +68,19 @@
         <h1 class="pdp-title">Steel 8 Line - Blue</h1>
         <p class="pdp-price">₩55,000</p>
 
-        <!-- 옵션: 사이즈(칩), 수량 -->
-<div class="pdp-options">
-  <div class="pdp-field">
-    <span>사이즈</span>
-    <div class="pdp-size">
-      <button type="button" class="size-btn" data-size="XS">XS (15cm)</button>
-      <button type="button" class="size-btn" data-size="S">S (16cm)</button>
-      <button type="button" class="size-btn" data-size="M">M (17cm)</button>
-      <button type="button" class="size-btn" data-size="L">L (18cm)</button>
-      <button type="button" class="size-btn" data-size="XL">XL (19cm)</button>
-      <!-- ❌/➕ 느낌의 원형 도움말 버튼 -->
-  <button type="button" id="sizeHelpBtn" class="size-help-btn">✚</button>
-    </div>
-  </div>
-
-  <span>수량</span>
-  <div class="pdp-qtybox">
-    <button type="button" class="pdp-qtybtn" data-delta="-1" aria-label="수량 감소">−</button>
-    <input id="pdp-qty" type="number" value="1" min="1" inputmode="numeric" aria-label="수량" disabled>
-    <button type="button" class="pdp-qtybtn" data-delta="1" aria-label="수량 증가">+</button>
-  </div>
-</div>
+        <div class="pdp-field">
+          <label for="sizeSelect">[필수] 옵션을 선택해주세요</label>
+          <select id="sizeSelect" name="sizeSelect">
+            <option value="">옵션을 선택해주세요</option>
+            <option value="16">16 cm</option>
+            <option value="17">17 cm</option>
+            <option value="18">18 cm</option>
+            <option value="19">19 cm</option>
+          </select>
+        </div>
+        
+        <!-- ✅ 선택된 옵션 블록 표시 영역 -->
+        <div id="selectedSizes" class="selected-inline"></div>
 
 <!-- 버튼 -->
 <div class="pdp-actions">
