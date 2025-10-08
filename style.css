@@ -21,6 +21,65 @@ body { font-family: system-ui, -apple-system, sans-serif; color: #222; }
   padding: 0 20px; /* 좌우 여백 */
 }
 
+/* ─── Divider Animation (Refined) ─── */
+.divider {
+  position: relative;
+  width: 0%;
+  height: 1px;
+  background-color: #111;
+  border: none;
+  margin: 120px auto 80px;
+  opacity: 0;
+  transition: width 2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.5s ease-in;
+  transform-origin: left; /* ← 왼쪽에서부터 그려짐 */
+}
+
+/* 관찰되면 서서히 나타나며 유지 */
+.divider.visible {
+  width: 80%;
+  opacity: 0.6;
+}
+
+.about-iketa {
+  text-align: center;
+  padding: 140px 20px;
+  background-color: #fff;
+  color: #111;
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  line-height: 1.8;
+}
+
+.about-iketa .about-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+}
+
+.about-iketa .about-text {
+  font-size: 1rem;
+  max-width: 720px;
+  margin: 0 auto 30px;
+  color: #333;
+}
+/* 공통 fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1.2s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 한글과 영어 타이밍 조절 */
+.fade-in.kr {
+  transition-delay: 0s;
+}
+.fade-in.en {
+  transition-delay: 0.4s; /* 영어는 약간 늦게 */
+}
 .brand {
   display: flex;
   align-items: center;
@@ -148,6 +207,12 @@ body { font-family: system-ui, -apple-system, sans-serif; color: #222; }
 .plist-price { font-size:15px; font-weight:700; color:#222; }
 .plist-card {cursor: zoom-in;  transition: transform .15s ease;}
 .plist-card:hover {transform: translateY(-2px);}
+
+#keyring-section {
+  margin-top: 80px;
+  border-top: 1px solid #ddd;
+  padding-top: 60px;
+}
 
 /* ===== 브랜드 아이콘 ===== */
 .brand-icons {
@@ -478,5 +543,8 @@ body { font-family: system-ui, -apple-system, sans-serif; color: #222; }
 }
 .brand-search input::placeholder {
   color: rgba(0,0,0,0.5); /* ✅ placeholder도 보이게 */
+}
+#brandDropdown {
+  display: none !important;
 }
 

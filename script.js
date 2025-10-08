@@ -99,13 +99,109 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // === 제품 카드 클릭 → 상세페이지 이동 ===
-  document.querySelectorAll('.plist-card[data-id]').forEach((card) => {
-    card.addEventListener('click', () => {
-      const id = card.dataset.id;
-      if (!id) return;
-      window.location.href = `product.html?id=${encodeURIComponent(id)}`;
-    });
-  });
+  const params = new URLSearchParams(window.location.search);
+  const productId = params.get("id");
+
+  const products = {
+    "steel6-blue": {
+      name: "Steel 6 Line - Blue",
+      price: "₩49,000",
+      image: "./images/product-list/bracelet1.jpg",
+      tagline: "The spirit of returning home"
+    },
+    "steel6-brown": {
+      name: "Steel 6 Line - Brown",
+      price: "₩49,000",
+      image: "./images/product-list/bracelet2.jpg",
+      tagline: "The spirit of warm journey"
+    },
+    "steel6-black": {
+      name: "Steel 6 Line - Black",
+      price: "₩49,000",
+      image: "./images/product-list/bracelet3.jpg",
+      tagline: "The spirit of timeless depth"
+    },
+    "steel6-red": {
+      name: "Steel 6 Line - Red",
+      price: "₩49,000",
+      image: "./images/product-list/bracelet4.jpg",
+      tagline: "The spirit of passion"
+    },
+    "steel6-green": {
+      name: "Steel 6 Line - Green",
+      price: "₩49,000",
+      image: "./images/product-list/bracelet5.jpg",
+      tagline: "The spirit of calm nature"
+    },
+    "nonsteel6-blue": {
+      name: "NonSteel 6 Line - Blue",
+      price: "₩45,000",
+      image: "./images/product-list/bracelet6.jpg",
+      tagline: "The spirit of breathing sea"
+    },
+    "nonsteel6-brown": {
+      name: "NonSteel 6 Line - Brown",
+      price: "₩45,000",
+      image: "./images/product-list/bracelet7.jpg",
+      tagline: "The spirit of classic warmth"
+    },
+    "nonsteel6-black": {
+      name: "NonSteel 6 Line - Black",
+      price: "₩45,000",
+      image: "./images/product-list/bracelet8.jpg",
+      tagline: "The spirit of simple strength"
+    },
+    "nonsteel6-red": {
+      name: "NonSteel 6 Line - Red",
+      price: "₩45,000",
+      image: "./images/product-list/bracelet9.jpg",
+      tagline: "The spirit of confident heart"
+    },
+    "nonsteel6-green": {
+      name: "NonSteel 6 Line - Green",
+      price: "₩45,000",
+      image: "./images/product-list/bracelet10.jpg",
+      tagline: "The spirit of natural balance"
+    },
+    "steel8-blue": {
+      name: "Steel 8 Line - Blue",
+      price: "₩54,000",
+      image: "./images/product-list/bracelet11.jpg",
+      tagline: "The spirit of deep voyage"
+    },
+    "steel8-brown": {
+      name: "Steel 8 Line - Brown",
+      price: "₩54,000",
+      image: "./images/product-list/bracelet12.jpg",
+      tagline: "The spirit of aged harmony"
+    },
+    "steel8-black": {
+      name: "Steel 8 Line - Black",
+      price: "₩54,000",
+      image: "./images/product-list/bracelet13.jpg",
+      tagline: "The spirit of silent power"
+    },
+    "steel8-red": {
+      name: "Steel 8 Line - Red",
+      price: "₩54,000",
+      image: "./images/product-list/bracelet14.jpg",
+      tagline: "The spirit of burning desire"
+    },
+    "steel8-green": {
+      name: "Steel 8 Line - Green",
+      price: "₩54,000",
+      image: "./images/product-list/bracelet15.jpg",
+      tagline: "The spirit of grounded peace"
+    }
+  };
+
+  const product = products[productId];
+  if (product) {
+    document.querySelector(".product-image").src = product.image;
+    document.querySelector(".product-title").textContent = product.name;
+    document.querySelector(".product-price").textContent = product.price;
+    document.querySelector(".product-tagline").textContent = product.tagline;
+  }
 
   // === 장바구니 공용 기능 ===
   const CART_KEY = 'iketa_cart_v1';
@@ -167,33 +263,44 @@ document.addEventListener('DOMContentLoaded', () => {
       window.location.href = 'intro.html';
     });
   }
+  
+const fadeElems = document.querySelectorAll('.fade-in');
 
-  // === 브랜드 드롭다운 ===
-  // === 브랜드 드롭다운 ===
-const brandTrigger = document.getElementById('brandMenuTrigger');
-const brandDropdown = document.getElementById('brandDropdown');
-const closeDropdown = document.querySelector('.close-dropdown');
-const brandSearchInput = document.getElementById('brandSearch'); // ✅ 패널 검색창 input
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
 
-if (brandTrigger && brandDropdown) {
-  // 브랜드에 마우스 올리면 열림
-  brandTrigger.addEventListener('mouseenter', () => {
-    brandDropdown.classList.add('open');
-    setTimeout(() => {
-      if (brandSearchInput) brandSearchInput.focus(); // ✅ 열리자마자 자동 focus
-    }, 300);
+      // ✅ 선(divider)일 경우: 먼저 선만 표시
+      if (entry.target.classList.contains('divider')) {
+        entry.target.classList.add('visible');
+
+        // 0.8초 뒤 → 바로 다음(한글문장)
+        setTimeout(() => {
+          const next = entry.target.nextElementSibling;
+          if (next && next.classList.contains('fade-in')) {
+            next.classList.add('visible');
+
+            // 한글문장이 등장한 후 0.8초 뒤 → 영어문장 등장
+            setTimeout(() => {
+              const after = next.nextElementSibling;
+              if (after && after.classList.contains('fade-in')) {
+                after.classList.add('visible');
+              }
+            }, 800);
+          }
+        }, 800);
+
+        observer.unobserve(entry.target);
+      }
+
+      // ✅ 일반 fade-in 요소는 따로 등장하지 않음 (자동 방지)
+      else if (!entry.target.previousElementSibling?.classList.contains('divider')) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    }
   });
+}, { threshold: 0.2 });
 
-  // 패널 영역 벗어나면 닫힘
-  brandDropdown.addEventListener('mouseleave', () => {
-    brandDropdown.classList.remove('open');
-  });
-}
-
-// 닫기 버튼 (-) 클릭 시 닫힘
-if (closeDropdown && brandDropdown) {
-  closeDropdown.addEventListener('click', () => {
-    brandDropdown.classList.remove('open');
-  });
-}
+fadeElems.forEach(elem => observer.observe(elem));
 });
