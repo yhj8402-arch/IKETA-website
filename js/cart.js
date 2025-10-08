@@ -56,14 +56,16 @@ document.addEventListener('DOMContentLoaded', () => {
     cart.forEach(item => {
       const div = document.createElement('div');
       div.className = 'cart-item';
+
       div.innerHTML = `
-        <img src="${item.img}" alt="${item.name}" class="cart-thumb">
-        <div class="cart-info">
-          <p>${item.name} (${item.size})</p>
-          <p>₩${item.price.toLocaleString()} × ${item.qty}</p>
-        </div>
-        <button class="remove-btn" data-id="${item.id}" data-size="${item.size}">×</button>
-      `;
+  <img src="${item.image}" alt="${item.name}" class="cart-thumb">
+  <div class="cart-info">
+    <p>${item.name} (${item.size})</p>
+    <p>₩${item.price.toLocaleString()} × ${item.qty}</p>
+  </div>
+  <button class="remove-btn" data-id="${item.id}" data-size="${item.size}">×</button>
+`;
+
       cartItemsEl.appendChild(div);
       total += item.price * item.qty;
     });
@@ -94,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const continueShoppingBtn = document.getElementById('continueShopping');
 if (continueShoppingBtn) {
   continueShoppingBtn.addEventListener('click', () => {
-    window.location.href = 'index.html'; // 메인 페이지로 이동
+    window.location.href = '../index.html'; // 메인 페이지로 이동
   });
 }
 });

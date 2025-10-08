@@ -3,79 +3,79 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
 
-  // 제품 데이터
+  // 제품 데이터 (이미지 경로 전부 ../images 로 수정)
   const products = {
     "steel6-blue": {
       name: "Ithaca I6 Aegean Blue",
       price: "₩45,000",
-      image: "./images/detail/bracelet1.jpg",
+      image: "../images/detail/bracelet1.jpg",
       thumbs: [
-        "./images/detail/bracelet1.jpg",
-        "./images/detail/thumbs1.jpg",
-        "./images/detail/thumbs2.jpg",
-        "./images/detail/thumbs3.jpg"
+        "../images/detail/bracelet1.jpg",
+        "../images/detail/thumbs1.jpg",
+        "../images/detail/thumbs2.jpg",
+        "../images/detail/thumbs3.jpg"
       ]
     },
     "steel6-brown": {
       name: "Ithaca I6 Thalassa Verde",
       price: "₩45,000",
-      image: "./images/detail/bracelet2.jpg",
+      image: "../images/detail/bracelet2.jpg",
       thumbs: [
-        "./images/detail/bracelet2.jpg",
-        "./images/detail/2_thumbs1.jpg",
-        "./images/detail/2_thumbs2.jpg",
-        "./images/detail/2_thumbs3.jpg"
+        "../images/detail/bracelet2.jpg",
+        "../images/detail/2_thumbs1.jpg",
+        "../images/detail/2_thumbs2.jpg",
+        "../images/detail/2_thumbs3.jpg"
       ]
     },
     "steel6-black": {
       name: "Ithaca I6 Dionysus Rouge",
       price: "₩45,000",
-      image: "./images/detail/bracelet3.jpg",
+      image: "../images/detail/bracelet3.jpg",
       thumbs: [
-        "./images/detail/bracelet3.jpg",
-        "./images/detail/3_thumbs1.jpg",
-        "./images/detail/3_thumbs2.jpg",
-        "./images/detail/3_thumbs3.jpg"
+        "../images/detail/bracelet3.jpg",
+        "../images/detail/3_thumbs1.jpg",
+        "../images/detail/3_thumbs2.jpg",
+        "../images/detail/3_thumbs3.jpg"
       ]
     },
     "steel6-red": {
       name: "Ithaca I6 Aegean Steel",
       price: "₩39,000",
-      image: "./images/detail/bracelet4.jpg",
+      image: "../images/detail/bracelet4.jpg",
       thumbs: [
-        "./images/detail/bracelet4.jpg",
-        "./images/detail/4_thumbs1.jpg",
-        "./images/detail/4_thumbs2.jpg",
-        "./images/detail/4_thumbs3.jpg"
+        "../images/detail/bracelet4.jpg",
+        "../images/detail/4_thumbs1.jpg",
+        "../images/detail/4_thumbs2.jpg",
+        "../images/detail/4_thumbs3.jpg"
       ]
     },
     "steel6-green": {
       name: "Ithaca I6 Obsidian Steel",
       price: "₩39,000",
-      image: "./images/detail/bracelet5.jpg",
+      image: "../images/detail/bracelet5.jpg",
       thumbs: [
-        "./images/detail/bracelet5.jpg",
-        "./images/detail/5_thumbs1.jpg",
-        "./images/detail/5_thumbs2.jpg",
-        "./images/detail/5_thumbs3.jpg"
+        "../images/detail/bracelet5.jpg",
+        "../images/detail/5_thumbs1.jpg",
+        "../images/detail/5_thumbs2.jpg",
+        "../images/detail/5_thumbs3.jpg"
       ]
     },
     "Terra Brown": {
       name: "Ithaca K12 Terra Brown",
       price: "₩59,000",
-      image: "./images/detail/bracelet6.jpg",
+      image: "../images/detail/bracelet6.jpg",
       thumbs: [
-        "./images/detail/bracelet6.jpg",
-        "./images/detail/6_thumbs1.jpg",
-        "./images/detail/6_thumbs2.jpg",
-        "./images/detail/6_thumbs3.jpg"
+        "../images/detail/bracelet6.jpg",
+        "../images/detail/6_thumbs1.jpg",
+        "../images/detail/6_thumbs2.jpg",
+        "../images/detail/6_thumbs3.jpg"
       ]
     }
   };
 
   // 현재 페이지에 맞는 제품 데이터 찾기
   const product = products[productId];
-  if (!product) return; // 잘못된 id면 종료
+  if (!product) return;
 
   // 상단 정보 반영
   const titleEl = document.querySelector(".pdp-title");
@@ -105,7 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
-
 
   // === 검색창 ===
   const searchIcon = document.querySelector('.fa-magnifying-glass');
@@ -172,29 +171,53 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // === 장바구니 담기 ===
-  if (addCartBtn) {
-    addCartBtn.addEventListener('click', () => {
-      const blocks = selectedSizes.querySelectorAll('.selected-block');
-      if (!blocks.length) {
-        alert("사이즈를 선택해주세요.");
-        return;
-      }
+if (addCartBtn) {
+  addCartBtn.addEventListener('click', () => {
+    const blocks = selectedSizes.querySelectorAll('.selected-block');
+    if (!blocks.length) {
+      alert("사이즈를 선택해주세요.");
+      return;
+    }
 
-      blocks.forEach(block => {
-        const size = block.dataset.size;
-        const qty = parseInt(block.querySelector('.qty-input').value, 10);
-        console.log(`장바구니 추가: ${size}cm (${qty}개)`); // 확인용
-      });
+    const CART_KEY = 'iketa_cart_v1';
+    let cart = JSON.parse(localStorage.getItem(CART_KEY) || "[]");
 
-      const modal = document.getElementById('cartModal');
-      modal.classList.remove('hidden');
-      setTimeout(() => {
-        modal.classList.add('hidden');
-        window.location.href = 'cart.html';
-      }, 2000);
+    // ✅ 현재 상세페이지 hero 이미지(src) 가져오기
+    const heroImg = document.getElementById('pdp-hero');
+    const heroSrc = heroImg ? new URL(heroImg.getAttribute('src'), window.location.href).href : "";
+
+    blocks.forEach(block => {
+      const size = block.dataset.size;
+      const qty = parseInt(block.querySelector('.qty-input').value, 10);
+      const cleanPrice = product?.price
+        ? parseInt(product.price.replace(/[^\d]/g, ""), 10)
+        : 0;
+
+      const newItem = {
+        id: productId,
+        name: product?.name || "상품명 없음",
+        price: cleanPrice,
+        image: heroSrc, // ✅ hero 이미지 그대로 저장
+        size,
+        qty
+      };
+
+      const existing = cart.find(item => item.id === newItem.id && item.size === newItem.size);
+      if (existing) existing.qty += newItem.qty;
+      else cart.push(newItem);
     });
-  }
 
+    localStorage.setItem(CART_KEY, JSON.stringify(cart));
+
+    // ✅ 모달 표시 후 이동
+    const modal = document.getElementById('cartModal');
+    modal.classList.remove('hidden');
+    setTimeout(() => {
+      modal.classList.add('hidden');
+      window.location.href = '../html/cart.html';
+    }, 1000);
+  });
+}
   // === 바로 구매 ===
   if (buyNowBtn) {
     buyNowBtn.addEventListener('click', () => {

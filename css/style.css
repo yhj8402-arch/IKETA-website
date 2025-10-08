@@ -548,3 +548,35 @@ body { font-family: system-ui, -apple-system, sans-serif; color: #222; }
   display: none !important;
 }
 
+/* ===== 모바일 전용: 히어로 슬라이더 캡션 크기 조정 ===== */
+@media (max-width: 768px) {
+  .hero-slider .caption {
+    font-size: 14px;      /* 기존 22px → 14px로 축소 */
+    left: 12px;
+    bottom: 12px;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slider .caption {
+    font-size: 12px;      /* 아주 작은 화면일 때 더 축소 */
+    left: 10px;
+    bottom: 10px;
+  }
+}
+
+/* ===== 모바일 전용: 대표 제품 워터마크 크기 조정 ===== */
+@media (max-width: 768px) {
+  .watermark {
+    font-size: 14px;   /* 기존 20px → 모바일에서는 14px */
+    bottom: 8px;       /* 살짝 위로 올려 균형 맞춤 */
+    left: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .watermark {
+    font-size: 12px;   /* 아주 작은 화면일 때 더 축소 */
+  }
+}
