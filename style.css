@@ -401,6 +401,11 @@ body { font-family: system-ui, -apple-system, sans-serif; color: #222; }
   transition: all 0.3s ease;
   touch-action: manipulation;  /* 🔥 모바일 확대/더블탭 방지 */
   -webkit-user-select: text;
+  -webkit-user-select: none;
+  user-select: none;
+
+  -webkit-text-size-adjust: 100%;
+   text-size-adjust: 100%;
 }
 
 .search-box input::placeholder {
