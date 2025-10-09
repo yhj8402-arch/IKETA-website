@@ -1,0 +1,76 @@
+/* ===== 모바일 전용 CSS ===== */
+
+/* 제품 리스트 */
+@media (max-width: 1200px) {
+    .plist-grid { grid-template-columns: repeat(4, 1fr); }
+  }
+  
+  @media (max-width: 992px) {
+    .plist-grid { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  }
+  
+  @media (max-width: 768px) {
+    .plist { padding: 0 16px; }
+    .plist-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+    .plist-card { padding: 12px 10px 14px; }
+    .plist-name { font-size: 13px; }
+    .plist-price { font-size: 14px; }
+    .brand-icons-grid { gap: 60px; }
+  }
+  
+  @media (max-width: 480px) {
+    .plist-grid { grid-template-columns: 1fr; gap: 12px; }
+    .brand-icons-grid { gap: 40px; }
+  }
+  
+  /* 히어로 슬라이더 */
+  @media (max-width: 768px) {
+    .hero-slider .prev { left: 10px; }
+    .hero-slider .next { right: 10px; }
+    .hero-slider .caption {
+      font-size: 14px;
+      left: 12px;
+      bottom: 12px;
+      line-height: 1.4;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-slider .caption {
+      font-size: 12px;
+      left: 10px;
+      bottom: 10px;
+    }
+  }
+  
+  /* 대표 제품 워터마크 */
+  @media (max-width: 768px) {
+    .watermark {
+      font-size: 14px;
+      bottom: 8px;
+      left: 8px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .watermark {
+      font-size: 12px;
+    }
+  }
+  
+  /* 검색창 */
+  @media (max-width: 768px) {
+    .search-box input {
+      width: 95%;
+      max-width: none;
+      font-size: 14px;
+    }
+  }
+  
+  /* 브랜드 검색창 */
+  @media (max-width: 768px) {
+    .brand-search input {
+      width: 90%;
+      max-width: none;
+    }
+  }
