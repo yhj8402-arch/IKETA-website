@@ -1,14 +1,11 @@
-/* 페이지 전체에 스크롤 허용 */
+/* 페이지 전체 기본 구조 (다른 페이지와 동일하게) */
 html, body {
-  height: auto;
-  min-height: 100vh;
+  height: 100%;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
-/* 장바구니 메인 섹션이 너무 짧을 때도 여유 공간 확보 */
-.cart-page {
-  padding-bottom: 120px; /* 버튼이 안 가려지게 여백 확보 */
-}
+
 
 main.cart-page {
   flex: 1;  /* 본문이 남는 공간 다 채움 */
@@ -28,10 +25,6 @@ main.cart-page {
 }
 
 /* 본문이 푸터에 가려지지 않게 살짝 띄워줌 */
-body {
-  padding-bottom: 80px;
-}
-
 .cart-page {
     max-width: 900px;
     margin: 40px auto;
@@ -132,4 +125,5 @@ body {
     color: #000;
     transform: scale(1.05);
   }
+  
   

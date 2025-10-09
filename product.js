@@ -60,9 +60,9 @@ document.addEventListener("DOMContentLoaded", () => {
         "images/detail/5_thumbs3.jpg"
       ]
     },
-    "Terra Brown": {
-      name: "Ithaca K12 Terra Brown",
-      price: "₩59,000",
+    "Helios-Flame": {
+      name: "Ithaca I6S Helios Flame",
+      price: "₩39,000",
       image: "images/detail/bracelet6.jpg",
       thumbs: [
         "images/detail/bracelet6.jpg",
@@ -70,7 +70,29 @@ document.addEventListener("DOMContentLoaded", () => {
         "images/detail/6_thumbs2.jpg",
         "images/detail/6_thumbs3.jpg"
       ]
-    }
+    },
+    "Thalassa-S-Verde": {
+      name: "Ithaca I6S Thalassa Verde",
+      price: "₩39,000",
+      image: "images/detail/bracelet7.jpg",
+      thumbs: [
+        "images/detail/bracelet7.jpg",
+        "images/detail/6_thumbs1.jpg",
+        "images/detail/6_thumbs2.jpg",
+        "images/detail/6_thumbs3.jpg"
+      ]
+    },
+    "Terra-S-Brown": {
+      name: "Ithaca I6S Terra Brown",
+      price: "₩39,000",
+      image: "images/detail/bracelet8.jpg",
+      thumbs: [
+        "images/detail/bracelet8.jpg",
+        "images/detail/6_thumbs1.jpg",
+        "images/detail/6_thumbs2.jpg",
+        "images/detail/6_thumbs3.jpg"
+      ]
+    },
   };
 
   // 현재 페이지에 맞는 제품 데이터 찾기

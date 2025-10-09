@@ -6,23 +6,23 @@ document.addEventListener("DOMContentLoaded", () => {
       "k12-terra": {
         name: "Ithaca K12 Terra Brown",
         price: "₩59,000",
-        image: "./images/detail/bracelet6.jpg",
+        image: "./images/detail/keyring1.jpg",
         thumbs: [
-          "./images/detail/bracelet6.jpg",
-          "./images/detail/6_thumbs1.jpg",
-          "./images/detail/6_thumbs2.jpg",
-          "./images/detail/6_thumbs3.jpg"
+          "./images/detail/keyring1.jpg",
+          "./images/detail/7_thumbs1.jpg",
+          "./images/detail/7_thumbs2.jpg",
+          "./images/detail/7_thumbs3.jpg"
         ]
       },
       "k12-black": {
         name: "Ithaca K12 Obsidian Black",
-        price: "₩35,000",
+        price: "₩59,000",
         image: "./images/detail/keyring2.jpg",
         thumbs: [
           "./images/detail/keyring2.jpg",
-          "./images/detail/keyring2-2.jpg",
-          "./images/detail/keyring2-3.jpg",
-          "./images/detail/keyring2-4.jpg"
+          "./images/detail/8_thumbs1.jpg",
+          "./images/detail/8_thumbs2.jpg",
+          "./images/detail/8_thumbs3.jpg"
         ]
       }
     };

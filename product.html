@@ -26,7 +26,7 @@
     <div class="brand" id="brandMenuTrigger">
       <a href="index.html">
         <img src="images/favicon.ico" alt="IKETA 로고 아이콘" class="logo-icon" />
-        IKETA
+        PRODUCT
       </a>
     </div>
     <div class="icons">
@@ -36,22 +36,30 @@
         <span class="cart-badge" id="cartCount">0</span>
       </div>
     </div>
-  </header>
+    <!-- 🔍 검색창 오버레이 (공통 적용) -->
+<div id="searchOverlay" class="search-overlay hidden">
+  <div class="search-box">
+    <input id="searchInput" type="text" placeholder="검색어를 입력하세요" autocomplete="off">
+    <button id="closeSearch">×</button>
 
-  <!-- 검색창 오버레이 -->
-  <div id="searchOverlay" class="search-overlay hidden">
-    <div class="search-box">
-      <input type="text" placeholder="검색어를 입력하세요" autocomplete="off" />
-      <button id="closeSearch">×</button>
+    <!-- 🔥 빠른 링크 영역 -->
+    <div class="search-quick-links">
+      <a href="index.html">→ HOME</a><br>
+      <a href="intro.html">→ IKETA Intro</a><br>
+      <a href="store.html">→ STORE 바로가기</a><br>
+      <a href="cart.html">→ CART 바로가기</a>
+</div>
     </div>
   </div>
+</div>
+  </header>
 
   <main class="pdp">
     <!-- 브레드크럼 -->
     <nav class="pdp-breadcrumb">
-      <a href="index.html">Home</a> <span>›</span>
-      <a href="index.html#products">Products</a> <span>›</span>
-      <span>Steel 8 Line - Blue</span>
+      <a href="/">Home</a> <span>›</span>
+      <a href="/#bracelets-section">Bracelets</a> <span>››</span>
+      <a href="/#keyring-section">Keyrings</a> <span>›››</span>
     </nav>
 
     <!-- 상단: 갤러리 + 정보 -->
@@ -163,8 +171,19 @@
     <div class="footer-inner">
       <p class="footer-brand">IKETA</p>
       <div class="footer-sns">
-        <a href="#" aria-label="Instagram" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-        <a href="#" aria-label="YouTube" target="_blank"><i class="fa-brands fa-youtube"></i></a>
+        <a href="https://www.instagram.com/iketa.kr"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 인스타그램 바로가기">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+        <a href="https://www.youtube.com/@iketa"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 유튜브 바로가기">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
       </div>
       <p class="footer-copy">© 2025 IKETA. All rights reserved.</p>
     </div>

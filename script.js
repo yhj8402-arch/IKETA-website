@@ -132,66 +132,36 @@ document.addEventListener('DOMContentLoaded', () => {
       image: "images/product-list/bracelet5.jpg",
       tagline: "The spirit of calm nature"
     },
-    "nonsteel6-blue": {
+    "Helios-Flame": {
       name: "NonSteel 6 Line - Blue",
-      price: "₩45,000",
+      price: "₩39,000",
       image: "images/product-list/bracelet6.jpg",
       tagline: "The spirit of breathing sea"
     },
-    "nonsteel6-brown": {
+    "Thalassa-S-Verde": {
       name: "NonSteel 6 Line - Brown",
-      price: "₩45,000",
+      price: "₩39,000",
       image: "images/product-list/bracelet7.jpg",
       tagline: "The spirit of classic warmth"
     },
-    "nonsteel6-black": {
+    "Terra-S-Brown": {
       name: "NonSteel 6 Line - Black",
-      price: "₩45,000",
+      price: "₩39,000",
       image: "images/product-list/bracelet8.jpg",
       tagline: "The spirit of simple strength"
     },
-    "nonsteel6-red": {
+    "k12-terra": {
       name: "NonSteel 6 Line - Red",
-      price: "₩45,000",
-      image: "images/product-list/bracelet9.jpg",
+      price: "₩59,000",
+      image: "images/product-list/keyring1.jpg",
       tagline: "The spirit of confident heart"
     },
-    "nonsteel6-green": {
-      name: "NonSteel 6 Line - Green",
-      price: "₩45,000",
-      image: "images/product-list/bracelet10.jpg",
-      tagline: "The spirit of natural balance"
+    "k12-black": {
+      name: "NonSteel 6 Line - Red",
+      price: "₩59,000",
+      image: "images/product-list/keyring2.jpg",
+      tagline: "The spirit of confident heart"
     },
-    "steel8-blue": {
-      name: "Steel 8 Line - Blue",
-      price: "₩54,000",
-      image: "images/product-list/bracelet11.jpg",
-      tagline: "The spirit of deep voyage"
-    },
-    "steel8-brown": {
-      name: "Steel 8 Line - Brown",
-      price: "₩54,000",
-      image: "images/product-list/bracelet12.jpg",
-      tagline: "The spirit of aged harmony"
-    },
-    "steel8-black": {
-      name: "Steel 8 Line - Black",
-      price: "₩54,000",
-      image: "images/product-list/bracelet13.jpg",
-      tagline: "The spirit of silent power"
-    },
-    "steel8-red": {
-      name: "Steel 8 Line - Red",
-      price: "₩54,000",
-      image: "images/product-list/bracelet14.jpg",
-      tagline: "The spirit of burning desire"
-    },
-    "steel8-green": {
-      name: "Steel 8 Line - Green",
-      price: "₩54,000",
-      image: "images/product-list/bracelet15.jpg",
-      tagline: "The spirit of grounded peace"
-    }
   };
 
   const product = products[productId];
@@ -242,15 +212,6 @@ document.addEventListener('DOMContentLoaded', () => {
   if (cartIcon) {
     cartIcon.addEventListener('click', () => {
       window.location.href = 'cart.html';
-    });
-  }
-
-  // === 브랜드 소개 이동 ===
-  const introBrandBtn = document.getElementById('intro-brand');
-  if (introBrandBtn) {
-    introBrandBtn.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.location.href = 'html/intro.html';
     });
   }
 

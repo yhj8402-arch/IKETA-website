@@ -13,14 +13,14 @@
   <link rel="stylesheet" href="cart.css">
   <link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
-<body>
+<body id="cart-page">
   <div class="page-wrapper">
   <!-- 헤더 (메인과 동일) -->
   <header class="header">
       <div class="brand" id="brandMenuTrigger">
         <a href="/index.html">
           <img src="images/favicon.ico" alt="IKETA 로고 아이콘" class="logo-icon">
-          IKETA
+          CART
         </a>
       </div>
     <div class="icons">
@@ -30,14 +30,22 @@
         <span class="cart-badge" id="cartCount">0</span>
       </div>
     </div>
-    <!-- 검색창 오버레이 -->
+    <!-- 🔍 검색창 오버레이 (공통 적용) -->
 <div id="searchOverlay" class="search-overlay hidden">
-    <div class="search-box">
-        <input type="text" placeholder="검색어를 입력하세요" autocomplete="off">
-      <button id="closeSearch">×</button>
+  <div class="search-box">
+    <input id="searchInput" type="text" placeholder="검색어를 입력하세요" autocomplete="off">
+    <button id="closeSearch">×</button>
+
+    <!-- 🔥 빠른 링크 영역 -->
+    <div class="search-quick-links">
+      <a href="index.html">→ HOME</a><br>
+      <a href="intro.html">→ IKETA Intro</a><br>
+      <a href="store.html">→ STORE 바로가기</a><br>
+      <a href="cart.html">→ CART 바로가기</a>
     </div>
   </div>
-  </header>
+</div>
+</header>
 
   <!-- 메인 -->
   <main class="cart-page">
@@ -58,6 +66,23 @@
   <footer class="footer">
     <div class="footer-inner">
       <p class="footer-brand">IKETA</p>
+
+      <div class="footer-sns">
+        <a href="https://www.instagram.com/iketa.kr"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 인스타그램 바로가기">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+        <a href="https://www.youtube.com/@iketa"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 유튜브 바로가기">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+
       <p class="footer-copy">© 2025 IKETA. All rights reserved.</p>
     </div>
   </footer>

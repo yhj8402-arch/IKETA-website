@@ -34,6 +34,14 @@
     <div class="search-box">
       <input id="searchInput" type="text" placeholder="검색어를 입력하세요" autocomplete="off">
       <button id="closeSearch">×</button>
+      
+<!-- 🔥 검색창 밑 바로가기 섹션 -->
+<div class="search-quick-links">
+  <a href="intro.html">→ IKETA Intro</a><br>
+  <a href="store.html">→ STORE 바로가기</a><br>
+  <a href="cart.html">→ CART 바로가기</a>
+</div>
+
     </div>
   </div>
 </header>
@@ -109,11 +117,11 @@
         a symbol of direction, return, and the human path.
       </p>
 
-      <a class="brand-btn" id="intro-brand">브랜드를 소개합니다</a>
+      <a class="brand-btn" id="intro-brand" href="intro.html">브랜드를 소개합니다</a>
     </section>
 
     <!-- 섹션 4: 제품 리스트 -->
-<section class="plist">
+<section id="bracelets-section" class="plist">
     <div class="plist-grid">
       <!-- 1~15 카드 -->
       <!-- Steel 6 Line -->
@@ -159,27 +167,27 @@
 
 <!-- NonSteel 6 Line -->
 <div class="plist-card">
-  <a href="product.html?id=Terra Brown">
+  <a href="product.html?id=Helios-Flame">
     <img src="./images/product-list/bracelet6.jpg" alt="NonSteel 6 Line - Blue">
   </a>
-  <p class="plist-name">Ithaca K12 Terra Brown</p>
-  <p class="plist-price">₩59,000</p>
+  <p class="plist-name">Ithaca I6S — Helios Flame</p>
+  <p class="plist-price">₩39,000</p>
 </div>
 
 <div class="plist-card">
-  <a href="product.html?id=nonsteel6-brown">
+  <a href="product.html?id=Thalassa-S-Verde">
     <img src="./images/product-list/bracelet7.jpg" alt="NonSteel 6 Line - Brown">
   </a>
-  <p class="plist-name">NonSteel 6 Line - Brown</p>
-  <p class="plist-price">₩45,000</p>
+  <p class="plist-name">Ithaca I6S Thalassa Verde</p>
+  <p class="plist-price">₩39,000</p>
 </div>
 
 <div class="plist-card">
-  <a href="product.html?id=nonsteel6-black">
+  <a href="product.html?id=Terra-S-Brown">
     <img src="./images/product-list/bracelet8.jpg" alt="NonSteel 6 Line - Black">
   </a>
-  <p class="plist-name">NonSteel 6 Line - Black</p>
-  <p class="plist-price">₩45,000</p>
+  <p class="plist-name">Ithaca I6S Terra Brown</p>
+  <p class="plist-price">₩39,000</p>
 </div>
 
 <div class="plist-card">
@@ -245,13 +253,13 @@
     <div class="plist-grid">
       <div class="plist-card">
         <a href="product-keyring.html?id=k12-terra">
-          <img src="./images/product-list/bracelet6.jpg" alt="Ithaca K12 Terra Brown">
+          <img src="./images/product-list/keyring1.JPG" alt="Ithaca K12 Terra Brown">
           <p class="plist-name">Ithaca K12 Terra Brown</p>
           <p class="plist-price">₩59,000</p>
         </a>
       </div>
       <div class="plist-card">
-        <a href="product.html?id=k12-black">
+        <a href="product-keyring.html?id=k12-black">
           <img src="./images/product-list/keyring2.jpg" alt="Ithaca K12 Obsidian Black">
           <p class="plist-name">Ithaca K12 Obsidian Black</p>
           <p class="plist-price">₩35,000</p>
@@ -284,11 +292,19 @@
 <footer class="footer">
     <div class="footer-inner">
       <p class="footer-brand">IKETA</p>
+      
       <div class="footer-sns">
-        <a href="#" aria-label="instagram.com/iketa.kr" target="_blank">
+        <a href="https://www.instagram.com/iketa.kr"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 인스타그램 바로가기">
           <i class="fa-brands fa-instagram"></i>
         </a>
-        <a href="#" aria-label="YouTube" target="_blank">
+      
+        <a href="https://www.youtube.com/@iketa"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 유튜브 바로가기">
           <i class="fa-brands fa-youtube"></i>
         </a>
       </div>
