@@ -105,91 +105,91 @@ document.addEventListener('DOMContentLoaded', () => {
     "steel6-blue": {
       name: "Steel 6 Line - Blue",
       price: "₩49,000",
-      image: "../images/product-list/bracelet1.jpg",
+      image: "images/product-list/bracelet1.jpg",
       tagline: "The spirit of returning home"
     },
     "steel6-brown": {
       name: "Steel 6 Line - Brown",
       price: "₩49,000",
-      image: "../images/product-list/bracelet2.jpg",
+      image: "images/product-list/bracelet2.jpg",
       tagline: "The spirit of warm journey"
     },
     "steel6-black": {
       name: "Steel 6 Line - Black",
       price: "₩49,000",
-      image: "../images/product-list/bracelet3.jpg",
+      image: "images/product-list/bracelet3.jpg",
       tagline: "The spirit of timeless depth"
     },
     "steel6-red": {
       name: "Steel 6 Line - Red",
       price: "₩49,000",
-      image: "../images/product-list/bracelet4.jpg",
+      image: "images/product-list/bracelet4.jpg",
       tagline: "The spirit of passion"
     },
     "steel6-green": {
       name: "Steel 6 Line - Green",
       price: "₩49,000",
-      image: "../images/product-list/bracelet5.jpg",
+      image: "images/product-list/bracelet5.jpg",
       tagline: "The spirit of calm nature"
     },
     "nonsteel6-blue": {
       name: "NonSteel 6 Line - Blue",
       price: "₩45,000",
-      image: "../images/product-list/bracelet6.jpg",
+      image: "images/product-list/bracelet6.jpg",
       tagline: "The spirit of breathing sea"
     },
     "nonsteel6-brown": {
       name: "NonSteel 6 Line - Brown",
       price: "₩45,000",
-      image: "../images/product-list/bracelet7.jpg",
+      image: "images/product-list/bracelet7.jpg",
       tagline: "The spirit of classic warmth"
     },
     "nonsteel6-black": {
       name: "NonSteel 6 Line - Black",
       price: "₩45,000",
-      image: "../images/product-list/bracelet8.jpg",
+      image: "images/product-list/bracelet8.jpg",
       tagline: "The spirit of simple strength"
     },
     "nonsteel6-red": {
       name: "NonSteel 6 Line - Red",
       price: "₩45,000",
-      image: "../images/product-list/bracelet9.jpg",
+      image: "images/product-list/bracelet9.jpg",
       tagline: "The spirit of confident heart"
     },
     "nonsteel6-green": {
       name: "NonSteel 6 Line - Green",
       price: "₩45,000",
-      image: "../images/product-list/bracelet10.jpg",
+      image: "images/product-list/bracelet10.jpg",
       tagline: "The spirit of natural balance"
     },
     "steel8-blue": {
       name: "Steel 8 Line - Blue",
       price: "₩54,000",
-      image: "../images/product-list/bracelet11.jpg",
+      image: "images/product-list/bracelet11.jpg",
       tagline: "The spirit of deep voyage"
     },
     "steel8-brown": {
       name: "Steel 8 Line - Brown",
       price: "₩54,000",
-      image: "../images/product-list/bracelet12.jpg",
+      image: "images/product-list/bracelet12.jpg",
       tagline: "The spirit of aged harmony"
     },
     "steel8-black": {
       name: "Steel 8 Line - Black",
       price: "₩54,000",
-      image: "../images/product-list/bracelet13.jpg",
+      image: "images/product-list/bracelet13.jpg",
       tagline: "The spirit of silent power"
     },
     "steel8-red": {
       name: "Steel 8 Line - Red",
       price: "₩54,000",
-      image: "../images/product-list/bracelet14.jpg",
+      image: "images/product-list/bracelet14.jpg",
       tagline: "The spirit of burning desire"
     },
     "steel8-green": {
       name: "Steel 8 Line - Green",
       price: "₩54,000",
-      image: "../images/product-list/bracelet15.jpg",
+      image: "images/product-list/bracelet15.jpg",
       tagline: "The spirit of grounded peace"
     }
   };
@@ -241,7 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const cartIcon = document.getElementById('cartIcon');
   if (cartIcon) {
     cartIcon.addEventListener('click', () => {
-      window.location.href = '../html/cart.html';
+      window.location.href = 'cart.html';
     });
   }
 
@@ -250,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (introBrandBtn) {
     introBrandBtn.addEventListener('click', (e) => {
       e.preventDefault();
-      window.location.href = '../html/intro.html';
+      window.location.href = 'html/intro.html';
     });
   }
 

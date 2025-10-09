@@ -3,72 +3,72 @@ document.addEventListener("DOMContentLoaded", () => {
   const params = new URLSearchParams(window.location.search);
   const productId = params.get("id");
 
-  // 제품 데이터 (이미지 경로 전부 ../images 로 수정)
+  // 제품 데이터 (이미지 경로 전부 images 로 수정)
   const products = {
     "steel6-blue": {
       name: "Ithaca I6 Aegean Blue",
       price: "₩45,000",
-      image: "../images/detail/bracelet1.jpg",
+      image: "images/detail/bracelet1.jpg",
       thumbs: [
-        "../images/detail/bracelet1.jpg",
-        "../images/detail/thumbs1.jpg",
-        "../images/detail/thumbs2.jpg",
-        "../images/detail/thumbs3.jpg"
+        "images/detail/bracelet1.jpg",
+        "images/detail/thumbs1.jpg",
+        "images/detail/thumbs2.jpg",
+        "images/detail/thumbs3.jpg"
       ]
     },
     "steel6-brown": {
       name: "Ithaca I6 Thalassa Verde",
       price: "₩45,000",
-      image: "../images/detail/bracelet2.jpg",
+      image: "images/detail/bracelet2.jpg",
       thumbs: [
-        "../images/detail/bracelet2.jpg",
-        "../images/detail/2_thumbs1.jpg",
-        "../images/detail/2_thumbs2.jpg",
-        "../images/detail/2_thumbs3.jpg"
+        "images/detail/bracelet2.jpg",
+        "images/detail/2_thumbs1.jpg",
+        "images/detail/2_thumbs2.jpg",
+        "images/detail/2_thumbs3.jpg"
       ]
     },
     "steel6-black": {
       name: "Ithaca I6 Dionysus Rouge",
       price: "₩45,000",
-      image: "../images/detail/bracelet3.jpg",
+      image: "images/detail/bracelet3.jpg",
       thumbs: [
-        "../images/detail/bracelet3.jpg",
-        "../images/detail/3_thumbs1.jpg",
-        "../images/detail/3_thumbs2.jpg",
-        "../images/detail/3_thumbs3.jpg"
+        "images/detail/bracelet3.jpg",
+        "images/detail/3_thumbs1.jpg",
+        "images/detail/3_thumbs2.jpg",
+        "images/detail/3_thumbs3.jpg"
       ]
     },
     "steel6-red": {
       name: "Ithaca I6 Aegean Steel",
       price: "₩39,000",
-      image: "../images/detail/bracelet4.jpg",
+      image: "images/detail/bracelet4.jpg",
       thumbs: [
-        "../images/detail/bracelet4.jpg",
-        "../images/detail/4_thumbs1.jpg",
-        "../images/detail/4_thumbs2.jpg",
-        "../images/detail/4_thumbs3.jpg"
+        "images/detail/bracelet4.jpg",
+        "images/detail/4_thumbs1.jpg",
+        "images/detail/4_thumbs2.jpg",
+        "images/detail/4_thumbs3.jpg"
       ]
     },
     "steel6-green": {
       name: "Ithaca I6 Obsidian Steel",
       price: "₩39,000",
-      image: "../images/detail/bracelet5.jpg",
+      image: "images/detail/bracelet5.jpg",
       thumbs: [
-        "../images/detail/bracelet5.jpg",
-        "../images/detail/5_thumbs1.jpg",
-        "../images/detail/5_thumbs2.jpg",
-        "../images/detail/5_thumbs3.jpg"
+        "images/detail/bracelet5.jpg",
+        "images/detail/5_thumbs1.jpg",
+        "images/detail/5_thumbs2.jpg",
+        "images/detail/5_thumbs3.jpg"
       ]
     },
     "Terra Brown": {
       name: "Ithaca K12 Terra Brown",
       price: "₩59,000",
-      image: "../images/detail/bracelet6.jpg",
+      image: "images/detail/bracelet6.jpg",
       thumbs: [
-        "../images/detail/bracelet6.jpg",
-        "../images/detail/6_thumbs1.jpg",
-        "../images/detail/6_thumbs2.jpg",
-        "../images/detail/6_thumbs3.jpg"
+        "images/detail/bracelet6.jpg",
+        "images/detail/6_thumbs1.jpg",
+        "images/detail/6_thumbs2.jpg",
+        "images/detail/6_thumbs3.jpg"
       ]
     }
   };
@@ -214,7 +214,7 @@ if (addCartBtn) {
     modal.classList.remove('hidden');
     setTimeout(() => {
       modal.classList.add('hidden');
-      window.location.href = '../html/cart.html';
+      window.location.href = 'cart.html';
     }, 1000);
   });
 }

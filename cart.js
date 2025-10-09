@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const continueShoppingBtn = document.getElementById('continueShopping');
 if (continueShoppingBtn) {
   continueShoppingBtn.addEventListener('click', () => {
-    window.location.href = '../index.html'; // 메인 페이지로 이동
+    window.location.href = 'index.html'; // 메인 페이지로 이동
   });
 }
 });
