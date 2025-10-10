@@ -1,0 +1,105 @@
+/* ===== 모바일 전용 CSS (최적화 버전) ===== */
+@media (max-width: 768px) {
+
+    /* 헤더 로고 & 텍스트 */
+    .brand {
+      font-size: 16px;
+    }
+    .brand .logo-icon {
+      width: 14px;
+      height: 14px;
+      margin-right: 4px;
+    }
+  
+    /* 제품 리스트 */
+    .plist { padding: 0 16px; }
+    .plist-grid {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 6px;
+    }
+    .plist-card { padding: 12px 10px 14px; }
+    .plist-card img {
+      aspect-ratio: 1/1;
+      border-radius: 8px;
+      transform: scale(1.05);
+    }
+    .plist-name { font-size: 13px; }
+    .plist-price { font-size: 14px; }
+  
+    /* 워터마크 */
+    .watermark {
+      font-size: 10px;
+      left: 6px;
+      bottom: 6px;
+    }
+  
+    /* 히어로 슬라이더 */
+    .hero-slider .prev { left: 10px; }
+    .hero-slider .next { right: 10px; }
+    .hero-slider .caption {
+      font-size: 14px;
+      left: 12px;
+      bottom: 12px;
+      line-height: 1.4;
+    }
+  
+    /* 검색창 오버레이 */
+    .search-overlay {
+      align-items: flex-start;
+      padding-top: 80px;
+    }
+    .search-box input {
+      width: 85%;
+      max-width: 600px;
+      font-size: 14px;
+      padding: 10px 14px;
+      border-radius: 10px;
+    }
+    #closeSearch {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 2000;
+    }
+  
+    /* 브랜드 검색창 */
+    .brand-search input {
+      width: 90%;
+      max-width: none;
+    }
+  
+    .brand-icons-grid { gap: 60px; }
+  }
+  
+  /* 초소형 화면용 (480px 이하) */
+  @media (max-width: 480px) {
+    .plist-grid { grid-template-columns: 1fr; gap: 12px; }
+    .watermark { font-size: 12px; }
+    .hero-slider .caption {
+      font-size: 12px;
+      left: 10px;
+      bottom: 10px;
+    }
+    .brand-icons-grid { gap: 40px; }
+  }
+  @media (max-width: 768px) {
+    .search-box input {
+      width: 80%;
+      max-width: 320px;
+      padding: 10px 14px;
+      font-size: 16px; /* ← iPhone 확대 방지 핵심 */
+      border: 1.5px solid rgba(0,0,0,0.25);
+      border-radius: 12px;
+      background: rgba(255,255,255,0.95);
+      color: #111;
+      outline: none;
+      transition: none; /* 포커스 시 크기 변화 방지 */
+    }
+  
+    /* 🔒 포커스돼도 크기·위치 변화 금지 */
+    .search-box input:focus {
+      transform: none !important;
+      font-size: 16px !important;
+      border-color: rgba(0,0,0,0.25);
+    }
+  }

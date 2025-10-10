@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>스토어 | IKETA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="store.css">
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+</head>
+<body>
+
+  <!-- ===== 헤더 ===== -->
+  <header class="header">
+    <div class="brand">
+      <img src="./images/logo.png" alt="IKETA" class="logo-icon">
+      <a href="index.html">STORE</a>
+    </div>
+    <div class="icons">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <div class="cart-wrapper" id="cartIcon">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+      </div>
+    </div>
+
+    <!-- 🔍 검색창 오버레이 (공통 적용) -->
+<div id="searchOverlay" class="search-overlay hidden">
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="검색어를 입력하세요" autocomplete="off">
+      <button id="closeSearch">×</button>
+  
+      <!-- 🔥 빠른 링크 영역 -->
+      <div class="search-quick-links">
+        <a href="index.html">→ HOME</a><br>
+        <a href="intro.html">→ IKETA Intro</a><br>
+        <a href="store.html">→ STORE 바로가기</a><br>
+        <a href="cart.html">→ CART 바로가기</a>
+</div>
+      </div>
+    </div>
+  </div>
+
+  </header>
+
+  <!-- ===== 제품 리스트 ===== -->
+  <section class="store-section">
+    <h2 class="store-title">Ithaca I6 Series</h2>
+    <div class="scroll-wrap">
+      <div class="product-card">
+        <img src="./images/product-list/bracelet1.jpg" alt="NonSteel Bracelet 1">
+        <p class="pname">Ithaca I6 Thalassa Verde</p>
+        <p class="pprice">₩45,000</p>
+      </div>
+      <div class="product-card">
+        <img src="./images/product-list/bracelet2.jpg" alt="NonSteel Bracelet 2">
+        <p class="pname">Ithaca I6 Aegean Blue</p>
+        <p class="pprice">₩45,000</p>
+      </div>
+      <div class="product-card">
+        <img src="./images/product-list/bracelet3.jpg" alt="NonSteel Bracelet 3">
+        <p class="pname">Ithaca I6 Dionysus Rouge</p>
+        <p class="pprice">₩45,000</p>
+      </div>
+      <!-- 필요시 계속 추가 -->
+    </div>
+  </section>
+  
+  <section class="store-section">
+    <h2 class="store-title">Ithaca Steel I6 Series</h2>
+    <div class="scroll-wrap">
+      <div class="product-card">
+        <img src="./images/product-list/bracelet4.jpg" alt="Steel Bracelet 1">
+        <p class="pname">Ithaca I6S Aegean Blue</p>
+        <p class="pprice">₩39,000</p>
+      </div>
+      <div class="product-card">
+        <img src="./images/product-list/bracelet5.jpg" alt="Steel Bracelet 2">
+        <p class="pname">Ithaca I6S Obsidian Black</p>
+        <p class="pprice">₩39,000</p>
+      </div>
+      <!-- 계속 추가 -->
+      <div class="product-card">
+        <img src="./images/product-list/bracelet6.jpg" alt="Steel Bracelet 3">
+        <p class="pname">Ithaca I6S — Helios Flame</p>
+        <p class="pprice">₩39,000</p>
+      </div>
+      <div class="product-card">
+        <img src="./images/product-list/bracelet7.jpg" alt="Steel Bracelet 4">
+        <p class="pname">Ithaca I6S Thalassa Verde</p>
+        <p class="pprice">₩39,000</p>
+      </div>
+      <div class="product-card">
+        <img src="./images/product-list/bracelet8.jpg" alt="Steel Bracelet 5">
+        <p class="pname">Ithaca I6S Terra Brown</p>
+        <p class="pprice">₩39,000</p>
+      </div>
+    </div>
+  </section>
+  
+    <!-- ===== 키링 섹션 ===== -->
+
+    <section class="store-section">
+        <h2 class="store-title">Ithaca K10 Series</h2>
+        <div class="scroll-wrap">
+          <div class="product-card">
+            <img src="./images/product-list/keyring3.jpg" alt="Keyring 3">
+            <p class="pname">Ithaca K10 Aegean Blue</p>
+            <p class="pprice">₩55,000</p>
+          </div>
+        </div>
+      </section>
+
+    <section class="store-section">
+        <h2 class="store-title">Ithaca K12 Series</h2>
+        <div class="scroll-wrap">
+          <div class="product-card">
+            <img src="./images/product-list/keyring1.jpg" alt="Keyring 1">
+            <p class="pname">Ithaca K12 Terra Brown</p>
+            <p class="pprice">₩59,000</p>
+          </div>
+          <div class="product-card">
+            <img src="./images/product-list/keyring2.jpg" alt="Keyring 2">
+            <p class="pname">Ithaca K12 Thalassa Verde</p>
+            <p class="pprice">₩59,000</p>
+          </div>
+          <div class="product-card">
+            <img src="./images/product-list/keyring4.jpg" alt="Keyring 4">
+            <p class="pname">Ithaca K12 Helios Flame</p>
+            <p class="pprice">₩59,000</p>
+          </div>
+          <div class="product-card">
+            <img src="./images/product-list/keyring5.jpg" alt="Keyring 5">
+            <p class="pname">Ithaca K12 Dionysus Rouge</p>
+            <p class="pprice">₩59,000</p>
+          </div>
+        </div>
+      </section>
+
+  <!-- ===== 푸터 ===== -->
+<footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">IKETA</p>
+      <div class="footer-sns">
+        <a href="https://www.instagram.com/iketa.kr"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 인스타그램 바로가기">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+        <a href="https://www.youtube.com/@iketa"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 유튜브 바로가기">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+      <p class="footer-copy">© 2025 IKETA. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,561 @@
+/* ===== 기본 ===== */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: system-ui, -apple-system, sans-serif; color: #222; }
+
+/* ===== 헤더 ===== */
+.header {
+  position: sticky; 
+  top: 0; 
+  z-index: 50;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center;
+  padding: 14px 20px;
+  background: #fff;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.navbar {
+  display: flex;
+  justify-content: space-between; /* brand는 왼쪽, icons는 오른쪽 */
+  align-items: center;
+  padding: 0 20px; /* 좌우 여백 */
+}
+  /* 데스크탑에서는 햄버거 숨기기 */
+  #menuToggle { display: none; }
+
+/* ─── Divider Animation (Refined) ─── */
+.divider {
+  position: relative;
+  width: 0%;
+  height: 1px;
+  background-color: #111;
+  border: none;
+  margin: 120px auto 80px;
+  opacity: 0;
+  transition: width 2s cubic-bezier(0.25, 1, 0.5, 1), opacity 1.5s ease-in;
+  transform-origin: left; /* ← 왼쪽에서부터 그려짐 */
+}
+
+/* 관찰되면 서서히 나타나며 유지 */
+.divider.visible {
+  width: 80%;
+  opacity: 0.6;
+}
+
+.about-iketa {
+  text-align: center;
+  padding: 140px 20px;
+  background-color: #fff;
+  color: #111;
+  font-family: 'Montserrat', 'Noto Sans KR', sans-serif;
+  line-height: 1.8;
+}
+
+.about-iketa .about-title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  letter-spacing: 0.5px;
+}
+
+.about-iketa .about-text {
+  font-size: 1rem;
+  max-width: 720px;
+  margin: 0 auto 30px;
+  color: #333;
+}
+/* 공통 fade-in */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1.2s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 한글과 영어 타이밍 조절 */
+.fade-in.kr {
+  transition-delay: 0s;
+}
+.fade-in.en {
+  transition-delay: 0.4s; /* 영어는 약간 늦게 */
+}
+.brand {
+  display: flex;
+  align-items: center;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.brand .logo-icon {
+  width: 16px;  /* 크기 줄이기 */
+  height: 16px;
+  margin-right: 6px;
+}
+/* 브랜드 안의 링크 초기화 */
+.brand a {
+  display: flex;
+  align-items: center;
+  color: inherit;          /* 부모색(검정) 그대로 */
+  text-decoration: none;   /* 밑줄 제거 */
+}
+.brand .logo-icon {
+  width: 18px;
+  height: 18px;
+  margin-right: 6px;      /* 아이콘-문구 간격 */
+}
+.brand a:hover {
+  opacity: 0.7;            /* 호버시 살짝 흐려짐 (선택사항) */
+}
+
+.icons { display: flex; gap: 18px; font-size: 18px; cursor: pointer; }
+.icons i:hover { color: #555; }
+
+#cartIcon {
+  position: relative; /* 기준점 */
+  cursor: pointer;
+}
+
+.cart-badge {
+  position: absolute;
+  top: -7px;   /* 더 아래로 내림 */
+  right: -7px; /* 더 안쪽으로 붙임 */
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 999px;
+  background: #111;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+/* ===== Hero Slider ===== */
+.hero-slider { position:relative; max-width:1160px; margin:0 auto; padding:16px 20px }
+.hero-slider .slides { position:relative; overflow:hidden; border-radius:10px }
+.hero-slider .slide { position:absolute; inset:0; opacity:0; transition:opacity .5s ease }
+.hero-slider .slide.is-active { position:relative; opacity:1 }
+.hero-slider img { width:100%; height:auto; display:block; aspect-ratio:16/9; object-fit:cover }
+
+/* 슬라이드 캡션 */
+.hero-slider .caption {
+  position: absolute; left: 20px; bottom: 20px;
+  font-size: 22px; font-weight: 700; color: #fff;
+  text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+}
+
+/* 슬라이드 화살표 */
+.hero-slider .nav {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  background: rgba(255,255,255,.85); border: 0; border-radius: 999px;
+  width: 40px; height: 40px; font-size: 20px; line-height: 40px;
+  text-align: center; cursor: pointer;
+  -webkit-user-select: none; user-select: none;
+}
+.hero-slider .prev{ left:-40px } .hero-slider .next{ right:-40px }
+.hero-slider .nav:hover{ background:#fff }
+
+/* 슬라이드 도트 */
+.hero-slider .dots { display:flex; gap:8px; justify-content:center; margin-top:10px }
+.hero-slider .dots button {
+  width:8px; height:8px; border-radius:50%; border:0; background:#ccc; cursor:pointer;
+}
+.hero-slider .dots button[aria-selected="true"]{ background:#222 }
+
+/* ===== 대표 제품 ===== */
+.featured { max-width:1160px; margin:0 auto; padding:48px 40px; }
+.product-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.product-box { position: relative; }
+.product-box img { width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:10px; display:block; }
+.watermark {
+  position:absolute; left:12px; bottom:12px;
+  font-size:20px; font-weight:700;
+  color:rgba(255,255,255,0.6); pointer-events:none;
+}
+
+/* ===== 브랜드 소개 문구 ===== */
+.brand-intro {
+  max-width:800px; margin:60px auto; text-align:center; padding:0 20px;
+}
+.brand-title { font-size:28px; font-weight:700; margin-bottom:28px; }
+.brand-sub { font-size:16px; color:#666; margin:6px 0; line-height:1.6; }
+
+/* 브랜드 소개 버튼 */
+.brand-btn {
+  text-align:center; margin:36px 0 60px;
+  display:inline-block; padding:12px 28px; font-size:16px; font-weight:600;
+  color:#222; background:transparent; border:2px solid #222; border-radius:30px;
+  text-decoration:none; transition:all .2s ease;
+}
+.brand-btn:hover { background:#222; color:#fff; }
+
+/* ===== 제품 리스트 ===== */
+.plist { max-width:1160px; margin:80px auto; padding:0 20px; }
+.plist-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
+.plist-card {
+  text-align:center; background:#fff; border:1px solid transparent;
+  border-radius:12px; overflow:hidden; padding:14px 12px 18px;
+  transition:transform .2s ease, box-shadow .2s ease, border-color .2s;
+}
+.plist-card:hover { transform:translateY(-4px); box-shadow:0 8px 20px rgba(0,0,0,.1); border-color:rgba(0,0,0,.15); }
+.plist-card img { width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:8px; margin-bottom:12px; }
+.plist-name { font-size:14px; font-weight:500; margin-bottom:4px; color:#333; }
+.plist-price { font-size:15px; font-weight:700; color:#222; }
+.plist-card {cursor: zoom-in;  transition: transform .15s ease;}
+.plist-card:hover {transform: translateY(-2px);}
+
+#keyring-section {
+  margin-top: 80px;
+  border-top: 1px solid #ddd;
+  padding-top: 60px;
+}
+
+/* ===== 브랜드 아이콘 ===== */
+.brand-icons {
+  max-width:1160px; margin:80px auto; padding:0 20px; text-align:center;
+}
+.brand-icons-grid { display:flex; justify-content:center; gap:140px; }
+.brand-icon i { font-size:32px; margin-bottom:10px; color:#222; }
+.brand-icon p { font-size:15px; font-weight:600; }
+.brand-icon small { display:block; font-size:13px; font-weight:400; color:#555; margin-top:4px; }
+
+/* ===== 푸터 ===== */
+.footer {
+    background: #f9f9f9;
+    border-top: 1px solid rgba(0,0,0,.1);
+    padding: 20px 20px;
+    text-align: center;
+    color: #555;
+    font-size: 14px;
+  }
+  
+  .footer-brand {
+    font-weight: 700;
+    font-size: 16px;
+    margin-bottom: 12px;
+    color: #222;
+  }
+  
+  .footer-sns {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-bottom: 12px;
+  }
+  
+  .footer-sns a {
+    color: #555;
+    font-size: 20px;
+    transition: color .2s ease;
+  }
+  
+  .footer-sns a:hover {
+    color: #000;
+  }
+  
+  .footer-copy {
+    font-size: 13px;
+    color: #777;
+  }
+
+  /* ===== 장바구니 / 사이즈 도움말 모달 공통 ===== */
+.cart-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+}
+
+.cart-modal.hidden { display: none; }
+
+.cart-modal .box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 280px;
+  box-shadow: 0 4px 20px rgba(0,0,0,.15);
+}
+
+.cart-modal h2 {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* ===== 장바구니 로딩 모달 전용 ===== */
+.dots {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.dots div {
+  width: 8px;
+  height: 8px;
+  background: #333;
+  border-radius: 50%;
+  animation: bounce 0.6s infinite alternate;
+}
+
+.dots div:nth-child(2) { animation-delay: 0.2s; }
+.dots div:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes bounce {
+  from { transform: translateY(0); opacity: .5; }
+  to { transform: translateY(-8px); opacity: 1; }
+}
+
+/* ===== 사이즈 도움말 버튼 ===== */
+.size-help-btn {
+  margin-left: 8px;       /* ← 왼쪽과의 간격 */
+  margin-top: 6px;        /* ← 위쪽으로 조금 내려오게 */
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1px solid #333;
+  background: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  padding: 0;
+  vertical-align: middle; /* 버튼 정렬 보정 */
+}
+
+.size-help-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+/* ===== 모달 닫기 버튼 ===== */
+.close-btn {
+  margin-top: 12px;
+  padding: 6px 12px;
+  border: none;
+  background: #333;
+  color: #fff;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.close-btn:hover { background: #555; }
+/* 검색창 오버레이*/
+/* 오버레이 */
+.search-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(5px);
+  z-index: 998;
+
+  /* 밑에 1/3은 보이게 */
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 66%, rgba(0,0,0,0) 100%);
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-size: 100% 100%;
+  mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 66%, rgba(0,0,0,0) 100%);
+  mask-repeat: no-repeat;
+  mask-size: 100% 100%;
+}
+.search-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.95);
+  display: flex;
+  flex-direction: column;     /* ✅ 세로 배치 */
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: calc(100px + 4vh);
+  z-index: 1000;
+}
+.search-overlay.hidden { display: none; }
+
+/* ===== 검색창 공통 스타일 ===== */
+.search-box {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0 auto;
+  gap: 18px;                /* ✅ 검색창과 링크 간격 조금 줄임 (메인 기준 맞춤) */
+}
+.search-quick-links {
+  width: 90%;
+  max-width: 800px;
+  text-align: left;
+  padding-left: 10px;       /* ✅ 살짝 들여쓰기 (통일) */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;                 /* ✅ STORE / CART 간격 약간 띄움 */
+}
+
+.search-quick-links a {
+  font-size: 15px;
+  color: #111;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.25s ease;
+}
+
+.search-quick-links a:hover {
+  opacity: 0.6;
+  transform: translateX(3px);
+}
+
+.search-box input {
+  width: 90%;
+  max-width: 800px;            /* PC에서는 길게 */
+  padding: 14px 18px;
+  border: 1.5px solid rgba(0,0,0,0.25);
+  border-radius: 12px;
+  font-size: 16px;             /* ✅ 16px 이상이면 iPhone 확대 방지 */
+  background: rgba(255,255,255,0.95);
+  color: #111;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.search-box input::placeholder {
+  color: rgba(0,0,0,0.5);
+}
+
+.search-box input:focus {
+  border-color: #000;          /* 포커스 시 선명하게 */
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  caret-color: #000;           /* 커서도 선명하게 */
+}
+
+/* 닫기 버튼 → 오른쪽 상단 */
+#closeSearch {
+  position: fixed;          /* ✅ 화면 기준으로 */
+  top: 20px;
+  right: 30px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  z-index: 1100;
+}
+#closeSearch:hover {
+  color: #000;
+}
+.brand-dropdown {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70vh; /* 화면 70%만 */
+  background: #fff;
+  transform: translateY(-100%);
+  transition: transform 0.6s ease-in-out; /* 내려올 때/올라갈 때 모두 부드럽게 */
+  z-index: 999;
+  padding: 40px;
+}
+
+.brand-dropdown.open {
+  transform: translateY(0);
+}
+
+.brand-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 40px 0 0 0;
+  text-align: left; /* 왼쪽 정렬 */
+}
+
+.brand-dropdown li {
+  margin-bottom: 20px;
+}
+
+.brand-dropdown a {
+  font-size: 1.4rem;
+  color: #111;
+  text-decoration: none;
+}
+
+.brand-dropdown a:hover {
+  color: #0070f3; /* Apple 느낌 블루 */
+}
+
+/* 닫기 버튼 (마이너스) */
+.close-dropdown {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+/* Spotlight 검색창 왼쪽 정렬 */
+.brand-search {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  margin: 30px 0;      /* 왼쪽 여백 제거 */
+  padding-left: 20px;  /* ul 과 동일하게 맞추기 */
+}
+.brand-dropdown ul {
+  list-style: none;
+  padding: 0 0 0 20px;   /* ← 검색창과 같은 왼쪽 여백 */
+  margin: 40px 0 0 0;
+  text-align: left;
+}
+.brand-search input {
+  width: 95%;          /* 부모 폭의 95% 차지 → 아주 길게 */
+  max-width: 1000px;   /* PC에서 최대 1000px까지 허용 */
+  caret-color: #000;   /* 커서 깜빡임 보이게 */
+  padding: 12px 18px;
+  border: 1px solid rgba(100, 100, 100, 0.4);  /* ✅ 회색 테두리 (은은하게) */
+  border-radius: 12px;
+  font-size: 1rem;
+  caret-color: #000;   /* 커서 색 (검정) */
+  background: rgba(255,255,255,0.2);
+  color: #111;  /* ✅ 글자 잘 보이게 검정 */
+  
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+
+  outline: none;
+  transition: all 0.3s ease;
+}
+.brand-search input::placeholder {
+  color: rgba(0,0,0,0.5); /* ✅ placeholder도 보이게 */
+}
+/* ===== 푸터 SNS 아이콘 가로 정렬 고정 ===== */
+.footer-sns {
+  display: flex !important;              /* 🔥 가로 정렬 */
+  flex-direction: row !important;
+  justify-content: center !important;    /* 중앙 정렬 */
+  align-items: center !important;
+  gap: 20px !important;                  /* 아이콘 간 간격 */
+  margin-top: 10px !important;
+}
+
+.footer-sns a {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 22px;
+  color: #555;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-sns a:hover {
+  color: #000;
+}

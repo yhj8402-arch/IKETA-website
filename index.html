@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IKETA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="product.css">
+  <link rel="stylesheet" href="style-mobile.css" media="(max-width: 768px)">
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+</head>
+<body>
+
+  <!-- 헤더 -->
+<header class="header">
+  <!-- 왼쪽: 브랜드 -->
+    <div class="brand" id="brandMenuTrigger">
+      <img src="./images/favicon.ico" alt="IKETA 로고 아이콘" class="logo-icon">
+      IKETA
+    </div>
+  <!-- 오른쪽: 아이콘 -->
+  <div class="icons">
+    <i class="fa-solid fa-magnifying-glass"></i> <!-- 검색 -->
+    
+    <div class="cart-wrapper" id="cartIcon">
+      <i class="fa-solid fa-bag-shopping"></i>
+      <span class="cart-badge" id="cartCount">0</span>
+    </div>
+  </div>
+
+  <!-- 검색창 오버레이 -->
+  <div id="searchOverlay" class="search-overlay hidden">
+    <div class="search-box">
+      <input id="searchInput" type="text" placeholder="검색어를 입력하세요" autocomplete="off">
+      <button id="closeSearch">×</button>
+      
+<!-- 🔥 검색창 밑 바로가기 섹션 -->
+<div class="search-quick-links">
+  <a href="intro.html">→ IKETA Intro</a><br>
+  <a href="store.html">→ STORE 바로가기</a><br>
+  <a href="cart.html">→ CART 바로가기</a>
+</div>
+
+    </div>
+  </div>
+</header>
+
+    <!-- 메인 슬라이드 -->
+    <section class="hero-slider">
+      <div class="slides">
+        <figure class="slide is-active">
+          <img src="./images/hero-slider/hero1.jpg" alt="히어로1">
+          <figcaption class="caption">
+            Wear Home, Share Hope
+          </figcaption>
+        </figure>
+  
+        <figure class="slide">
+          <img src="./images/hero-slider/hero2.jpg" alt="히어로2">
+          <figcaption class="caption">
+            Ithaca I6 — The spirit of returning home
+          </figcaption>
+        </figure>
+  
+        <figure class="slide">
+          <img src="./images/hero-slider/hero3.jpg" alt="히어로3">
+          <figcaption class="caption">
+            Handmade, 3–5 days
+          </figcaption>
+        </figure>
+      </div>
+  
+      <!-- 좌우 화살표 -->
+      <button class="nav prev" aria-label="이전">‹</button>
+      <button class="nav next" aria-label="다음">›</button>
+  
+      <!-- 하단 점프 도트 -->
+      <div class="dots" role="tablist" aria-label="슬라이드 인디케이터"></div>
+    </section>
+
+    <!-- 섹션 2: 대표 제품 -->
+    <section class="featured">
+        <div class="product-grid">
+          <div class="product-box">
+            <img src="./images/featured/prod1.jpg" alt="대표 제품 1">
+            <span class="watermark">IKETA</span>
+          </div>
+          <div class="product-box">
+            <img src="./images/featured/prod2.jpg" alt="대표 제품 2">
+            <span class="watermark">IKETA</span>
+          </div>
+          <div class="product-box">
+            <img src="./images/featured/prod3.jpg" alt="대표 제품 3">
+            <span class="watermark">IKETA</span>
+          </div>
+        </div>
+      </section>
+
+      <hr class="fade-in divider">
+
+    <!-- 섹션 3: 브랜드 소개 -->
+    <section class="about-iketa">
+      <h2 class="about-title fade-in">The Rare Knot, Made Real</h2>
+    
+      <p class="about-text fade-in kr">
+        이케타(IKETA)는 호메로스의 영원한 고전 <em>오디세이아</em>에서 영감을 받았습니다.<br>
+        오디세우스의 삶은 마치 한 올의 끈이 여러 매듭으로 이어지는 여정처럼 느껴졌습니다.<br>
+        그가 돌아가고자 했던 고향 <em>이타카(Ithaca)</em>의 의미를 새롭게 해석해, <strong>IKETA</strong>라는 이름이 탄생했습니다.<br>
+        이케타는 인간이 걸어가는 <strong>방향과 귀결</strong>을 상징합니다.
+      </p>
+    
+      <p class="about-text fade-in en">
+        Inspired by Homer’s timeless <em>Odyssey</em>, IKETA was born from the belief<br>
+        that every journey, like a knot, binds moments into meaning.<br>
+        Reinterpreting the origin of <em>Ithaca</em>, we created IKETA —<br>
+        a symbol of direction, return, and the human path.
+      </p>
+
+      <a class="brand-btn" id="intro-brand" href="intro.html">브랜드를 소개합니다</a>
+    </section>
+
+    <!-- 섹션 4: 제품 리스트 -->
+<section id="bracelets-section" class="plist">
+    <div class="plist-grid">
+      <!-- 1~15 카드 -->
+      <!-- Steel 6 Line -->
+<div class="plist-card">
+  <a href="product.html?id=steel6-blue">
+    <img src="./images/product-list/bracelet1.jpg" alt="Steel 6 Line - Blue">
+  </a>
+  <p class="plist-name">Ithaca I6 Aegean Blue</p>
+  <p class="plist-price">₩45,000</p>
+</div>
+
+<div class="plist-card">
+  <a href="product.html?id=steel6-brown">
+    <img src="./images/product-list/bracelet2.jpg" alt="Steel 6 Line - Brown">
+  </a>
+  <p class="plist-name">Ithaca I6 Thalassa Verde</p>
+  <p class="plist-price">₩45,000</p>
+</div>
+
+<div class="plist-card">
+  <a href="product.html?id=steel6-black">
+    <img src="./images/product-list/bracelet3.jpg" alt="Steel 6 Line - Black">
+  </a>
+  <p class="plist-name">Ithaca I6 Dionysus Rouge</p>
+  <p class="plist-price">₩45,000</p>
+</div>
+
+<div class="plist-card">
+  <a href="product.html?id=steel6-red">
+    <img src="./images/product-list/bracelet4.jpg" alt="Steel 6 Line - Red">
+  </a>
+  <p class="plist-name">Ithaca I6 Aegean Steel</p>
+  <p class="plist-price">₩39,000</p>
+</div>
+
+<div class="plist-card">
+  <a href="product.html?id=steel6-green">
+    <img src="./images/product-list/bracelet5.jpg" alt="Steel 6 Line - Green">
+  </a>
+  <p class="plist-name">Ithaca I6 Obsidian Steel</p>
+  <p class="plist-price">₩39,000</p>
+</div>
+
+<!-- NonSteel 6 Line -->
+<div class="plist-card">
+  <a href="product.html?id=Helios-Flame">
+    <img src="./images/product-list/bracelet6.jpg" alt="NonSteel 6 Line - Blue">
+  </a>
+  <p class="plist-name">Ithaca I6S — Helios Flame</p>
+  <p class="plist-price">₩39,000</p>
+</div>
+
+<div class="plist-card">
+  <a href="product.html?id=Thalassa-S-Verde">
+    <img src="./images/product-list/bracelet7.jpg" alt="NonSteel 6 Line - Brown">
+  </a>
+  <p class="plist-name">Ithaca I6S Thalassa Verde</p>
+  <p class="plist-price">₩39,000</p>
+</div>
+
+<div class="plist-card">
+  <a href="product.html?id=Terra-S-Brown">
+    <img src="./images/product-list/bracelet8.jpg" alt="NonSteel 6 Line - Black">
+  </a>
+  <p class="plist-name">Ithaca I6S Terra Brown</p>
+  <p class="plist-price">₩39,000</p>
+</div>
+
+<div class="plist-card">
+  <a href="product.html?id=nonsteel6-red">
+    <img src="./images/product-list/bracelet9.jpg" alt="NonSteel 6 Line - Red">
+  </a>
+  <p class="plist-name">NonSteel 6 Line - Red</p>
+  <p class="plist-price">₩45,000</p>
+</div>
+
+<div class="plist-card">
+  <a href="product.html?id=nonsteel6-green">
+    <img src="./images/product-list/bracelet10.jpg" alt="NonSteel 6 Line - Green">
+  </a>
+  <p class="plist-name">NonSteel 6 Line - Green</p>
+  <p class="plist-price">₩45,000</p>
+</div>
+
+<!-- Steel 8 Line -->
+<div class="plist-card">
+  <a href="product.html?id=steel8-blue">
+    <img src="./images/product-list/bracelet11.jpg" alt="Steel 8 Line - Blue">
+  </a>
+  <p class="plist-name">Steel 8 Line - Blue</p>
+  <p class="plist-price">₩54,000</p>
+</div>
+
+<div class="plist-card">
+  <a href="product.html?id=steel8-brown">
+    <img src="./images/product-list/bracelet12.jpg" alt="Steel 8 Line - Brown">
+  </a>
+  <p class="plist-name">Steel 8 Line - Brown</p>
+  <p class="plist-price">₩54,000</p>
+</div>
+
+<div class="plist-card">
+  <a href="product.html?id=steel8-black">
+    <img src="./images/product-list/bracelet13.jpg" alt="Steel 8 Line - Black">
+  </a>
+  <p class="plist-name">Steel 8 Line - Black</p>
+  <p class="plist-price">₩54,000</p>
+</div>
+
+<div class="plist-card">
+  <a href="product.html?id=steel8-red">
+    <img src="./images/product-list/bracelet14.jpg" alt="Steel 8 Line - Red">
+  </a>
+  <p class="plist-name">Steel 8 Line - Red</p>
+  <p class="plist-price">₩54,000</p>
+</div>
+
+<div class="plist-card">
+  <a href="product.html?id=steel8-green">
+    <img src="./images/product-list/bracelet15.jpg" alt="Steel 8 Line - Green">
+  </a>
+  <p class="plist-name">Steel 8 Line - Green</p>
+  <p class="plist-price">₩54,000</p>
+</div>
+    </div>
+  </section>
+<!-- 키링파트 (최대 10개) -->
+  <section id="keyring-section" class="plist">
+    <div class="plist-grid">
+      <div class="plist-card">
+        <a href="product-keyring.html?id=k12-terra">
+          <img src="./images/product-list/keyring1.JPG" alt="Ithaca K12 Terra Brown">
+          <p class="plist-name">Ithaca K12 Terra Brown</p>
+          <p class="plist-price">₩59,000</p>
+        </a>
+      </div>
+      <div class="plist-card">
+        <a href="product-keyring.html?id=k12-black">
+          <img src="./images/product-list/keyring2.jpg" alt="Ithaca K12 Obsidian Black">
+          <p class="plist-name">Ithaca K12 Obsidian Black</p>
+          <p class="plist-price">₩35,000</p>
+        </a>
+      </div>
+      <!-- 여기에 나머지 키링들 (최대 10개) -->
+    </div>
+  </section>
+
+  <!-- 섹션 5: 브랜드 아이콘 -->
+<section class="brand-icons">
+    <div class="brand-icons-grid">
+      <div class="brand-icon">
+        <i class="fa-solid fa-hand"></i>
+        <p>Handmade<br><small>3–5일 제작</small></p>
+      </div>
+      <div class="brand-icon">
+        <i class="fa-solid fa-shield-heart"></i>
+        <p>Skin-safe<br><small>스테인리스 마감</small></p>
+      </div>
+      <div class="brand-icon">
+        <i class="fa-solid fa-repeat"></i>
+        <p>Free Resizing<br><small>무료 리사이즈 & AS</small></p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== 푸터 ===== -->
+<footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">IKETA</p>
+      
+      <div class="footer-sns">
+        <a href="https://www.instagram.com/iketa.kr"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 인스타그램 바로가기">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+        <a href="https://www.youtube.com/@iketa"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 유튜브 바로가기">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+      <p class="footer-copy">© 2025 IKETA. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="script.js" defer></script>
+  <script src="product.js" defer></script>
+</body>
+</html>

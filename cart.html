@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>장바구니 | IKETA</title>
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous" referrerpolicy="no-referrer" />
+      
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-mobile.css" media="(max-width: 768px)">
+  <link rel="stylesheet" href="cart.css">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+</head>
+<body id="cart-page">
+  <div class="page-wrapper">
+  <!-- 헤더 (메인과 동일) -->
+  <header class="header">
+      <div class="brand" id="brandMenuTrigger">
+        <a href="/index.html">
+          <img src="images/favicon.ico" alt="IKETA 로고 아이콘" class="logo-icon">
+          CART
+        </a>
+      </div>
+    <div class="icons">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <div class="cart-wrapper" id="cartIcon">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+      </div>
+    </div>
+    <!-- 🔍 검색창 오버레이 (공통 적용) -->
+<div id="searchOverlay" class="search-overlay hidden">
+  <div class="search-box">
+    <input id="searchInput" type="text" placeholder="검색어를 입력하세요" autocomplete="off">
+    <button id="closeSearch">×</button>
+
+    <!-- 🔥 빠른 링크 영역 -->
+    <div class="search-quick-links">
+      <a href="index.html">→ HOME</a><br>
+      <a href="intro.html">→ IKETA Intro</a><br>
+      <a href="store.html">→ STORE 바로가기</a><br>
+      <a href="cart.html">→ CART 바로가기</a>
+    </div>
+  </div>
+</div>
+</header>
+
+  <!-- 메인 -->
+  <main class="cart-page">
+    <h1>장바구니</h1>
+    <div id="cartItems">
+      <!-- 여기 JS로 상품들이 추가될 예정 -->
+    </div>
+    <div class="cart-total">
+      총 합계: <span id="cartTotal">₩0</span>
+    </div>
+    <div class="cart-actions">
+        <button class="continue-btn" id="continueShopping">쇼핑 계속하기</button>
+        <button class="order-btn">주문하기</button>   
+    </div>
+  </main>
+
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">IKETA</p>
+
+      <div class="footer-sns">
+        <a href="https://www.instagram.com/iketa.kr"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 인스타그램 바로가기">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+        <a href="https://www.youtube.com/@iketa"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 유튜브 바로가기">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+
+      <p class="footer-copy">© 2025 IKETA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+  <script src="product.js" defer></script>
+  <script src="cart.js" defer></script>
+</body>
+</html>
