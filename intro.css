@@ -1,87 +1,102 @@
 /* ===== 브랜드 스토리 전체 ===== */
 .intro {
-    background: #f9f9f9; /* 은은한 배경 */
-    color: #333;
-    font-family: 'Montserrat', sans-serif;
-  }
-  
-  /* ===== 지그재그 섹션 ===== */
+  background: #f9f9f9; /* 은은한 배경 */
+  color: #333;
+  font-family: "Montserrat", sans-serif;
+}
+
+/* ===== 지그재그 섹션 (안정형 완성본) ===== */
+.zigzag {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 100px 12%;
+  position: relative;
+  flex-direction: row; /* 기본 왼쪽 이미지 */
+  transition: all 0.3s ease;
+}
+
+/* 부모 안에서 .zigzag 기준으로 홀짝 처리 (확실하게 nth-of-type 사용) */
+.zigzag:nth-of-type(odd) {
+  flex-direction: row;
+  background: linear-gradient(135deg, #ffffff, #f1f1f1);
+}
+
+.zigzag:nth-of-type(even) {
+  flex-direction: row-reverse;
+  background: linear-gradient(135deg, #fafafa, #ececec);
+}
+
+/* 수동으로 .reverse 넣으면 우선 적용 */
+.zigzag.reverse {
+  flex-direction: row-reverse !important;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
   .zigzag {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 60px;
-    padding: 100px 12%;
-    position: relative;
+    flex-direction: column !important;
+    text-align: center;
+    gap: 40px;
+    padding: 80px 8%;
   }
-  
-  /* 교차 배치 */
+}
+
+/* 이미지 */
+.zigzag-image {
+  flex: 1;
+}
+.zigzag-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.zigzag-image img:hover {
+  transform: scale(1.05);
+}
+
+/* 텍스트 */
+.zigzag-text {
+  flex: 1;
+  max-width: 520px;
+}
+.zigzag-text h2 {
+  font-size: 2.2rem;
+  margin-bottom: 20px;
+  color: #111;
+  position: relative;
+}
+.zigzag-text h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #444;
+  margin-top: 12px;
+}
+.zigzag-text p {
+  font-size: 1.1rem;
+  line-height: 1.75;
+  color: #555;
+  margin-bottom: 18px;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+  .zigzag {
+    flex-direction: column;
+    text-align: center;
+    padding: 60px 6%;
+    gap: 30px;
+  }
   .zigzag.reverse {
-    flex-direction: row-reverse;
-  }
-  
-  /* 배경에 그라데이션 느낌 (섹션마다 다르게) */
-  .zigzag:nth-child(odd) {
-    background: linear-gradient(135deg, #ffffff, #f1f1f1);
-  }
-  .zigzag:nth-child(even) {
-    background: linear-gradient(135deg, #fafafa, #ececec);
-  }
-  
-  /* 이미지 */
-  .zigzag-image {
-    flex: 1;
-  }
-  .zigzag-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 16px;
-    box-shadow: 0 12px 24px rgba(0,0,0,0.12);
-    object-fit: cover;
-    transition: transform 0.4s ease;
-  }
-  .zigzag-image img:hover {
-    transform: scale(1.05);
-  }
-  
-  /* 텍스트 */
-  .zigzag-text {
-    flex: 1;
-    max-width: 520px;
-  }
-  .zigzag-text h2 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-    color: #111;
-    position: relative;
+    flex-direction: column;
   }
   .zigzag-text h2::after {
-    content: '';
-    display: block;
-    width: 50px;
-    height: 3px;
-    background: #444;
-    margin-top: 12px;
+    margin: 12px auto 0; /* 중앙 정렬 */
   }
-  .zigzag-text p {
-    font-size: 1.1rem;
-    line-height: 1.75;
-    color: #555;
-    margin-bottom: 18px;
-  }
-  
-  /* 반응형 */
-  @media (max-width: 768px) {
-    .zigzag {
-      flex-direction: column;
-      text-align: center;
-      padding: 60px 6%;
-      gap: 30px;
-    }
-    .zigzag.reverse {
-      flex-direction: column;
-    }
-    .zigzag-text h2::after {
-      margin: 12px auto 0; /* 중앙 정렬 */
-    }
-  }
+}

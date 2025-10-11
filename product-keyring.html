@@ -1,158 +1,258 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Ithaca K12 Terra Brown | IKETA</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ithaca K12 Terra Brown | IKETA</title>
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style-mobile.css" media="(max-width: 768px)">
-  <link rel="stylesheet" href="product.css" />
-  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style-mobile.css" media="(max-width: 768px)" />
+    <link rel="stylesheet" href="product.css" />
+    <link rel="stylesheet" href="product-keyring.css" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
 
-  <!-- 아이콘 -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
-<body>
-  <!-- 헤더 (메인과 동일) -->
-  <header class="header">
-    <div class="brand" id="brandMenuTrigger">
-      <a href="index.html">
-        <img src="./images/favicon.ico" alt="IKETA 로고 아이콘" class="logo-icon">
-        IKETA
-      </a>
-    </div>
-    <div class="icons">
-      <i class="fa-solid fa-magnifying-glass"></i>
-      <div class="cart-wrapper" id="cartIcon">
-        <i class="fa-solid fa-bag-shopping"></i>
-        <span class="cart-badge" id="cartCount">0</span>
-      </div>
-      <!-- 검색창 오버레이 -->
-      <div id="searchOverlay" class="search-overlay hidden">
-        <div class="search-box">
-          <input type="text" placeholder="검색어를 입력하세요" autocomplete="off">
-          <button id="closeSearch">×</button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main class="pdp">
-    <!-- 브레드크럼 -->
-    <nav class="pdp-breadcrumb">
-      <a href="/">Home</a> <span>›</span>
-      <a href="/#keyring-section">Keyrings</a> <span>››</span>
-      <a href="/#bracelets-section">Bracelets</a> <span>›››</span>
-    </nav>
-
-    <!-- 상단: 갤러리 + 정보 -->
-    <section class="pdp-top">
-      <div class="pdp-gallery">
-        <div class="pdp-hero">
-          <img id="pdp-hero" src="./images/detail/keyring1.jpg" alt="Ithaca K12 Terra Brown 메인 이미지">
-        </div>
-        <div class="pdp-thumbs">
-          <img class="is-active" src="./images/detail/keyring1.jpg" data-full="./images/detail/keyring1.jpg" alt="썸네일 1">
-          <img src="./images/detail/keyring1-2.jpg" data-full="./images/detail/keyring1-2.jpg" alt="썸네일 2">
-          <img src="./images/detail/keyring1-3.jpg" data-full="./images/detail/keyring1-3.jpg" alt="썸네일 3">
-          <img src="./images/detail/keyring1-4.jpg" data-full="./images/detail/keyring1-4.jpg" alt="썸네일 4">
-        </div>
-      </div>
-
-      <!-- 정보 -->
-      <aside class="pdp-info">
-        <h1 class="pdp-title">Ithaca K12 Terra Brown</h1>
-        <p class="pdp-price">₩35,000</p>
-
-        <!-- 버튼 -->
-        <div class="pdp-actions">
-          <button id="addCartBtn" class="pdp-btn pdp-cart">장바구니 담기</button>
-        </div>
-
-        <ul class="pdp-bullets">
-          <li>12-Line Greek Knot Keyring</li>
-          <li>Handmade · 제작 3–5일</li>
-          <li>Solid Brass Finish</li>
-        </ul>
-      </aside>
-    </section>
-
-    <!-- 아래로 길게: 스토리 이미지 -->
-    <section class="pdp-immersion">
-      <figure><img src="./images/detail/story-1.jpg" alt="결속 디테일"></figure>
-      <figure><img src="./images/detail/story-2.jpg" alt="키링 텍스처"></figure>
-      <figure><img src="./images/detail/story-3.jpg" alt="가죽 디테일"></figure>
-      <figure><img src="./images/detail/story-4.jpg" alt="패키징 이미지"></figure>
-    </section>
-
-    <!-- 상세/소재/배송/관리 -->
-    <section class="pdp-detail">
-      <details open>
-        <summary>제품 설명</summary>
-        <p>그리스 12신을 상징하는 12줄 매듭 키링. 장인의 손끝에서 완성된 결속의 상징, 귀향의 정신을 담았습니다.</p>
-      </details>
-      <details>
-        <summary>소재 & 규격</summary>
-        <ul>
-          <li>소재: 천연가죽, 브론즈 메탈</li>
-          <li>길이: 약 10cm</li>
-          <li>제조: Korea (Handmade)</li>
-        </ul>
-      </details>
-      <details>
-        <summary>배송 & 교환</summary>
-        <p>제작 3–5일 후 발송. 수령 7일 이내 미사용 제품 교환/반품 가능.</p>
-      </details>
-      <details>
-        <summary>관리 방법</summary>
-        <p>물·땀 접촉 후 마른 천으로 닦아 보관. 장기간 미사용 시 지퍼백 보관 권장.</p>
-      </details>
-    </section>
-
-    <!-- 연관상품 -->
-    <section class="pdp-related">
-      <h2 class="pdp-rel-title">Related</h2>
-      <div class="pdp-rel-grid">
-        <a class="pdp-rel-card" href="product-keyring.html?id=k12-black">
-          <img src="./images/product-list/keyring2.jpg" alt="Ithaca K12 Obsidian Black">
-          <p>Ithaca K12 Obsidian Black</p><span>₩35,000</span>
-        </a>
-        <a class="pdp-rel-card" href="product-keyring.html?id=k12-terra">
-          <img src="./images/product-list/keyring1.jpg" alt="Ithaca K12 Terra Brown">
-          <p>Ithaca K12 Terra Brown</p><span>₩35,000</span>
+    <!-- 아이콘 -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- 헤더 (메인과 동일) -->
+    <header class="header">
+      <div class="brand" id="brandMenuTrigger">
+        <a href="index.html">
+          <img
+            src="./images/favicon.ico"
+            alt="IKETA 로고 아이콘"
+            class="logo-icon"
+          />
+          IKETA
         </a>
       </div>
-    </section>
-  </main>
+      <div class="icons">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <div class="cart-wrapper" id="cartIcon">
+          <i class="fa-solid fa-bag-shopping"></i>
+          <span class="cart-badge" id="cartCount">0</span>
+        </div>
+        <!-- 검색창 오버레이 -->
+        <div id="searchOverlay" class="search-overlay hidden">
+          <div class="search-box">
+            <input
+              id="searchInput"
+              type="text"
+              placeholder="검색어를 입력하세요"
+              autocomplete="off"
+            />
+            <button id="closeSearch">×</button>
 
-  <!-- 푸터 -->
-  <footer class="footer">
-    <div class="footer-inner">
-      <p class="footer-brand">IKETA</p>
-      <div class="footer-sns">
-        <a href="https://www.instagram.com/iketa.kr"
-           target="_blank"
-           rel="noopener noreferrer"
-           title="IKETA 인스타그램 바로가기">
-          <i class="fa-brands fa-instagram"></i>
-        </a>
-      
-        <a href="https://www.youtube.com/@iketa"
-           target="_blank"
-           rel="noopener noreferrer"
-           title="IKETA 유튜브 바로가기">
-          <i class="fa-brands fa-youtube"></i>
-        </a>
+            <!-- 🔥 검색창 밑 바로가기 섹션 -->
+            <div class="search-quick-links">
+              <a href="index.html">→ HOME</a><br />
+              <a href="intro.html">→ IKETA Intro</a><br />
+              <a href="store.html">→ STORE 바로가기</a><br />
+              <a href="cart.html">→ CART 바로가기</a>
+            </div>
+          </div>
+        </div>
       </div>
-      <p class="footer-copy">© 2025 IKETA. All rights reserved.</p>
-    </div>
-  </footer>
+    </header>
 
-  <!-- JS -->
-  <script src="script.js"></script>
-  <script src="product-keyring.js"></script>
-</body>
+    <main class="pdp">
+      <!-- 브레드크럼 -->
+      <nav class="pdp-breadcrumb">
+        <a href="/">Home</a> <span>›</span> <a href="store.html">Store</a>
+        <span>››</span> <a href="/#bracelets-section">Keyrings</a>
+        <span>›››</span> <a href="/#keyring-section">Bracelets</a>
+        <span>››››</span>
+      </nav>
+
+      <!-- 상단: 갤러리 + 정보 -->
+      <section class="pdp-top">
+        <div class="pdp-gallery">
+          <div class="pdp-hero">
+            <img
+              id="pdp-hero"
+              src="./images/detail/keyring1.jpg"
+              alt="Ithaca K12 Terra Brown 메인 이미지"
+            />
+          </div>
+          <div class="pdp-thumbs">
+            <img
+              class="is-active"
+              src="./images/detail/keyring1.jpg"
+              data-full="./images/detail/keyring1.jpg"
+              alt="썸네일 1"
+            />
+            <img
+              src="./images/detail/keyring1-2.jpg"
+              data-full="./images/detail/keyring1-2.jpg"
+              alt="썸네일 2"
+            />
+            <img
+              src="./images/detail/keyring1-3.jpg"
+              data-full="./images/detail/keyring1-3.jpg"
+              alt="썸네일 3"
+            />
+            <img
+              src="./images/detail/keyring1-4.jpg"
+              data-full="./images/detail/keyring1-4.jpg"
+              alt="썸네일 4"
+            />
+          </div>
+        </div>
+
+        <!-- 정보 -->
+        <aside class="pdp-info">
+          <h1 class="pdp-title">Ithaca K12 Terra Brown</h1>
+          <p class="pdp-price">₩35,000</p>
+
+          <!-- 버튼 -->
+          <div class="pdp-actions">
+            <button id="addCartBtn" class="pdp-btn pdp-cart">
+              장바구니 담기
+            </button>
+          </div>
+
+          <ul class="pdp-bullets">
+            <li>12-Line Greek Knot Keyring</li>
+            <li>Handmade · 제작 3–5일</li>
+            <li>Solid Brass Finish</li>
+          </ul>
+        </aside>
+      </section>
+
+      <!-- 아래로 길게: 스토리 이미지 -->
+      <section class="pdp-immersion">
+        <figure>
+          <img src="./images/detail/story-1.jpg" alt="결속 디테일" />
+        </figure>
+        <figure>
+          <img src="./images/detail/story-2.jpg" alt="키링 텍스처" />
+        </figure>
+        <figure>
+          <img src="./images/detail/story-3.jpg" alt="가죽 디테일" />
+        </figure>
+        <figure>
+          <img src="./images/detail/story-4.jpg" alt="패키징 이미지" />
+        </figure>
+      </section>
+
+      <!-- 상세/소재/배송/관리 -->
+      <section class="pdp-detail">
+        <details open>
+          <summary>제품 설명</summary>
+          <p>
+            그리스 12신을 상징하는 12줄 매듭 키링. 장인의 손끝에서 완성된 결속의
+            상징, 귀향의 정신을 담았습니다.
+          </p>
+        </details>
+        <details>
+          <summary>소재 & 규격</summary>
+          <ul>
+            <li>소재: 천연가죽, 브론즈,실버,골드 메탈</li>
+            <li>길이: 약 10cm</li>
+            <li>제조: Korea (Handmade)</li>
+          </ul>
+        </details>
+        <details>
+          <summary>배송 & 교환</summary>
+          <p>제작 3–5일 후 발송. 수령 7일 이내 미사용 제품 교환/반품 가능.</p>
+        </details>
+        <details>
+          <summary>관리 방법</summary>
+          <p>물에 닿지 않도록 주의해주시기 바랍니다.</p>
+        </details>
+      </section>
+
+      <!-- 연관상품 -->
+      <section class="pdp-related">
+        <h2 class="pdp-rel-title">Related</h2>
+        <div class="pdp-rel-grid">
+          <a class="pdp-rel-card" href="product-keyring.html?id=k12-Thalassa">
+            <img
+              src="./images/product-list/keyring2.jpg"
+              alt="Ithaca K12 Thalassa Verde"
+            />
+            <p>Ithaca K12 Thalassa Verde</p>
+            <span>₩59,000</span>
+          </a>
+          <a class="pdp-rel-card" href="product-keyring.html?id=k12-terra">
+            <img
+              src="./images/product-list/keyring1.jpg"
+              alt="Ithaca K12 Terra Brown"
+            />
+            <p>Ithaca K12 Terra Brown</p>
+            <span>₩59,000</span>
+          </a>
+          <a class="pdp-rel-card" href="product-k10.html?id=k10-Aegean">
+            <img
+              src="./images/product-list/KEYRING3.JPG"
+              alt="Ithaca K10 Aegean Blue"
+            />
+            <p>Ithaca K10 Aegean Blue</p>
+            <span>₩55,000</span>
+          </a>
+          <a class="pdp-rel-card" href="product-keyring.html?id=k12-Helios">
+            <img
+              src="./images/product-list/KEYRING4.JPG"
+              alt="Ithaca K12 Helios Flame"
+            />
+            <p>Ithaca K12 Helios Flame</p>
+            <span>₩59,000</span>
+          </a>
+          <a class="pdp-rel-card" href="product-keyring.html?id=k12-Dionysus">
+            <img
+              src="./images/product-list/KEYRING5.JPG"
+              alt="Ithaca K12 Dionysus Rouge"
+            />
+            <p>Ithaca K12 Dionysus Rouge</p>
+            <span>₩59,000</span>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p class="footer-brand">IKETA</p>
+        <div class="footer-sns">
+          <a
+            href="https://www.instagram.com/iketa.kr"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="IKETA 인스타그램 바로가기"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+
+          <a
+            href="https://www.youtube.com/@iketa"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="IKETA 유튜브 바로가기"
+          >
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+        <p class="footer-copy">© 2025 IKETA. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- 장바구니 모달 -->
+<div id="cartModal" class="cart-modal hidden">
+  <div class="box">
+    <p>장바구니 담는 중입니다...</p>
+  </div>
+</div>
+
+    <!-- JS -->
+    <script src="script.js" defer></script>
+    <script src="product.js" defer></script>
+    <script src="product-keyring.js" defer></script>
+  </body>
 </html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IKETA | Begin the Knot</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <main class="intro-page">
+    <div class="brand-box">
+      <h1 class="brand">IKETA</h1>
+      <p class="tagline">모든 매듭에는 이야기가 있습니다.</p>
+      <p class="subline">당신의 여정과 닮은 다양한 매듭의 제품들을 만나보세요.</p>
+    </div>
+
+    <div class="input-area">
+      <div class="input-box">
+        <span class="placeholder-text" id="placeholderText">이메일 주소</span>
+        <input type="email" id="email" autocomplete="off" title="이메일 주소 입력">
+      </div>
+      <button id="enterBtn">입장하기 →</button>
+    </div>
+  </main>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const emailInput = document.getElementById('email');
+      const placeholder = document.querySelector('.placeholder-text');
+      const enterBtn = document.getElementById('enterBtn');
+      const inputBox = document.querySelector('.input-box');
+    
+      emailInput.addEventListener('focus', () => {
+        placeholder.classList.add('move-up');
+      });
+    
+      emailInput.addEventListener('blur', () => {
+        if (emailInput.value.trim() === '') {
+          placeholder.classList.remove('move-up');
+        }
+      });
+    
+      enterBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+    
+        if (emailInput.value.trim() === '') {
+          inputBox.classList.add('active');
+          emailInput.focus();
+    
+          setTimeout(() => {
+            inputBox.classList.remove('active');
+          }, 500);
+        } else {
+          window.location.href = 'index.html';
+        }
+      });
+    
+      document.addEventListener('click', (e) => {
+        if (!inputBox.contains(e.target) && e.target !== enterBtn) {
+          if (emailInput.value.trim() === '') {
+            placeholder.classList.remove('move-up');
+          }
+        }
+      });
+    });
+    </script>
+</body>
+</html>

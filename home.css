@@ -1,0 +1,134 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(135deg, #fafafa, #eaeaea);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #222;
+  }
+  
+  .intro-page {
+    text-align: center;
+  }
+  
+  .brand-box {
+    margin-bottom: 40px;
+  }
+  .brand {
+    font-size: 2.8rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #111;
+    margin-bottom: 10px;
+  }
+  .tagline {
+    font-size: 1.3rem;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 8px;
+  }
+  .subline {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  .input-area {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px; /* ✅ 버튼과 입력창 완전히 분리 */
+    margin-top: 20px;
+  }
+  
+  /* 입력창 */
+  .input-box {
+    position: relative;
+    width: 500px;
+    height: 56px;
+  }
+  
+  .input-box input {
+    width: 100%;
+    height: 100%;
+    padding: 0 18px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* ✅ 이제 단독 박스니까 네 모서리 전부 둥글게 */
+    font-size: 1rem;
+    color: #111;
+    outline: none;
+    background: #fff;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  /* placeholder 위치 조정 */
+.placeholder-text {
+    position: absolute;
+    left: 18px;
+    top: 52%; /* ✅ 살짝 아래로 (기존 50%) */
+    transform: translateY(-50%);
+    color: #888;
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.35s ease;
+  }
+  
+  /* 버튼 색상 변경 */
+  #enterBtn {
+    height: 56px;
+    padding: 0 28px;
+    background: #111; /* ✅ 진한 블랙/그레이 계열 */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.25); /* ✅ 자연스러운 그림자 */
+  }
+  
+  #enterBtn:hover {
+    background: #222; /* ✅ hover 시 약간 밝은 그레이 */
+    transform: translateY(-1px);
+  }
+  
+  .placeholder-text.move-up {
+    top: 10px;
+    font-size: 0.8rem;
+    color: #000;
+  }
+  
+  /* 버튼 */
+  #enterBtn {
+    height: 56px;
+    padding: 0 28px;
+    background: #000000;
+    color: #fff;
+    border: none;
+    border-radius: 6px; /* ✅ 버튼도 독립된 박스 */
+    font-size: 1.05rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;  
+  }
+  
+  #enterBtn:hover {
+    background: #19644e;
+    transform: translateY(-1px);
+  }
+  /* placeholder (조금만 올라가게 조정) */
+.placeholder-text.move-up {
+    top: 30%; /* ✅ 기존 10px → 더 아래, 자연스러운 높이 */
+    font-size: 0.85rem;
+    color: #000;
+  }
+  
+  /* 박스 hover (입장 클릭 시 효과용 클래스) */
+  .input-box.active {
+    transform: scale(1.03);
+    transition: transform 0.25s ease;
+  }

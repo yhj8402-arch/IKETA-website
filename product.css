@@ -228,3 +228,120 @@ box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .hidden { display: none; }
+
+/* 섹션 전체 구조 */
+.pdp-story {
+  max-width: 850px;
+  margin: 80px auto 60px;
+  text-align: center;
+  padding: 0 20px;
+  line-height: 1.9;
+}
+
+/* 제목 */
+.pdp-subtitle {
+  font-family: "Montserrat", "Noto Sans KR", sans-serif;
+  font-size: 1.7rem;
+  font-weight: 600;
+  color: #111;
+  margin-bottom: 24px;
+  letter-spacing: -0.02em;
+}
+
+/* 본문 설명 */
+.pdp-desc {
+  font-size: 1.05rem;
+  color: #444;
+  white-space: pre-line;
+  letter-spacing: -0.01em;
+  text-align: center;
+}
+
+/* 섹션 간 간격 자연스럽게 */
+.pdp-story + .pdp-immersion {
+  margin-top: -10px;
+}
+
+/* 반응형 (모바일 최적화) */
+@media (max-width: 768px) {
+  .pdp-story {
+    margin: 60px auto 40px;
+    padding: 0 16px;
+  }
+
+  .pdp-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .pdp-desc {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  .pdp-immersion figure {
+    border-radius: 8px;
+  }
+}
+/* 페이지 마무리 섹션 - 감정적 여운 */
+.pdp-story:last-of-type {
+  border-top: 1px solid #eee;
+  padding-top: 60px;
+  opacity: 0.95;
+  transition: opacity 0.5s ease;
+}
+
+.pdp-story:last-of-type:hover {
+  opacity: 1;
+}
+
+.pdp-story:last-of-type .pdp-subtitle {
+  font-size: 1.4rem;
+  color: #222;
+  margin-bottom: 20px;
+}
+
+.pdp-story:last-of-type .pdp-desc {
+  font-size: 1.05rem;
+  color: #555;
+  line-height: 1.9;
+  white-space: pre-line;
+}
+
+.pdp-watermark {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+  opacity: 1; /* ✨ 살짝 투명하지만 확실히 보이게 */
+  transition: opacity 0.8s ease;
+}
+
+.pdp-watermark img {
+  width: 80px;
+  height: auto;
+  filter: brightness(0.2); /* ✨ 약간 어둡게 (배경과 조화) */
+  transition: transform 0.4s ease, filter 0.4s ease;
+}
+
+.pdp-watermark img:hover {
+  transform: scale(1.08);
+  filter: brightness(0.5); /* 살짝 밝아짐 */
+}
+.pdp-figure {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 18px;
+  margin: 30px 0 60px;
+}
+
+.pdp-figure img {
+  width: 340px;         /* ✅ 모든 이미지 가로 크기 동일 */
+  height: 340px;        /* ✅ 세로 크기도 동일 (정사각형) */
+  border-radius: 10px;
+  object-fit: cover;    /* ✅ 비율 유지하면서 박스 꽉 채움 */
+  transition: transform 0.3s ease;
+}
+
+.pdp-figure img:hover {
+  transform: scale(1.04);
+}

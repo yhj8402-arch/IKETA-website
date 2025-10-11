@@ -1,26 +1,26 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   // === 검색창 ===
-  const searchIcon = document.querySelector('.fa-magnifying-glass');
-  const searchOverlay = document.getElementById('searchOverlay');
-  const closeSearch = document.getElementById('closeSearch');
+  const searchIcon = document.querySelector(".fa-magnifying-glass");
+  const searchOverlay = document.getElementById("searchOverlay");
+  const closeSearch = document.getElementById("closeSearch");
 
   if (searchIcon) {
-    searchIcon.addEventListener('click', () => {
-      searchOverlay.classList.remove('hidden');
-      document.getElementById('searchInput').focus();
+    searchIcon.addEventListener("click", () => {
+      searchOverlay.classList.remove("hidden");
+      document.getElementById("searchInput").focus();
     });
   }
 
   if (closeSearch) {
-    closeSearch.addEventListener('click', () => {
-      searchOverlay.classList.add('hidden');
+    closeSearch.addEventListener("click", () => {
+      searchOverlay.classList.add("hidden");
     });
   }
 
   // === 장바구니 ===
-  const CART_KEY = 'iketa_cart_v1';
-  const cartItemsEl = document.getElementById('cartItems');
-  const cartTotalEl = document.getElementById('cartTotal');
+  const CART_KEY = "iketa_cart_v1";
+  const cartItemsEl = document.getElementById("cartItems");
+  const cartTotalEl = document.getElementById("cartTotal");
 
   const loadCart = () => {
     try {
@@ -36,26 +36,26 @@ document.addEventListener('DOMContentLoaded', () => {
   function updateCartBadge() {
     const cart = loadCart();
     const count = cart.reduce((sum, i) => sum + i.qty, 0);
-    const badge = document.getElementById('cartCount');
+    const badge = document.getElementById("cartCount");
     if (badge) badge.textContent = count;
   }
 
   // ✅ 장바구니 렌더링
   function renderCart() {
     const cart = loadCart();
-    cartItemsEl.innerHTML = '';
+    cartItemsEl.innerHTML = "";
 
     if (cart.length === 0) {
-      cartItemsEl.innerHTML = '<p>장바구니가 비어 있습니다.</p>';
-      cartTotalEl.textContent = '₩0';
+      cartItemsEl.innerHTML = "<p>장바구니가 비어 있습니다.</p>";
+      cartTotalEl.textContent = "₩0";
       updateCartBadge();
       return;
     }
 
     let total = 0;
-    cart.forEach(item => {
-      const div = document.createElement('div');
-      div.className = 'cart-item';
+    cart.forEach((item) => {
+      const div = document.createElement("div");
+      div.className = "cart-item";
 
       div.innerHTML = `
   <img src="${item.image}" alt="${item.name}" class="cart-thumb">
@@ -63,7 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
     <p>${item.name} (${item.size})</p>
     <p>₩${item.price.toLocaleString()} × ${item.qty}</p>
   </div>
-  <button class="remove-btn" data-id="${item.id}" data-size="${item.size}">×</button>
+  <button class="remove-btn" data-id="${item.id}" data-size="${
+        item.size
+      }">×</button>
 `;
 
       cartItemsEl.appendChild(div);
@@ -73,16 +75,16 @@ document.addEventListener('DOMContentLoaded', () => {
     cartTotalEl.textContent = `₩${total.toLocaleString()}`;
 
     // ✅ 삭제 버튼 이벤트 연결 (항상 최신화)
-    document.querySelectorAll('.remove-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
+    document.querySelectorAll(".remove-btn").forEach((btn) => {
+      btn.addEventListener("click", () => {
         const id = btn.dataset.id;
         const size = btn.dataset.size;
 
         let cart = loadCart();
-        cart = cart.filter(i => !(i.id === id && i.size === size));
+        cart = cart.filter((i) => !(i.id === id && i.size === size));
         saveCart(cart);
 
-        renderCart();      // 다시 렌더링
+        renderCart(); // 다시 렌더링
         updateCartBadge(); // 숫자 갱신
       });
     });
@@ -93,10 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // 실행
   renderCart();
   // === 계속 쇼핑하기 버튼 동작 ===
-const continueShoppingBtn = document.getElementById('continueShopping');
-if (continueShoppingBtn) {
-  continueShoppingBtn.addEventListener('click', () => {
-    window.location.href = 'index.html'; // 메인 페이지로 이동
-  });
-}
+  const continueShoppingBtn = document.getElementById("continueShopping");
+  if (continueShoppingBtn) {
+    continueShoppingBtn.addEventListener("click", () => {
+      window.location.href = "store.html"; // 메인 페이지로 이동
+    });
+  }
 });
