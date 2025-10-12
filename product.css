@@ -227,6 +227,7 @@ text-align: center;
 box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
+<<<<<<< HEAD
 .hidden { display: none; }
 
 /* 섹션 전체 구조 */
@@ -345,3 +346,6 @@ box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 .pdp-figure img:hover {
   transform: scale(1.04);
 }
+=======
+.hidden { display: none; }
+>>>>>>> 5bdb02764fee832de8efe9b5966aae4a0736b77b

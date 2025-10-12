@@ -20,6 +20,11 @@ body { font-family: system-ui, -apple-system, sans-serif; color: #222; }
   align-items: center;
   padding: 0 20px; /* 좌우 여백 */
 }
+<<<<<<< HEAD
+=======
+  /* 데스크탑에서는 햄버거 숨기기 */
+  #menuToggle { display: none; }
+>>>>>>> 5bdb02764fee832de8efe9b5966aae4a0736b77b
 
 /* ─── Divider Animation (Refined) ─── */
 .divider {

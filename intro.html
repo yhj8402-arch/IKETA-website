@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="ko">
+<<<<<<< HEAD
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -204,3 +205,164 @@
     <script src="cart.js"></script>
   </body>
 </html>
+=======
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IKETA</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style-mobile.css" media="(max-width: 768px)">
+  <link rel="stylesheet" href="intro.css">
+  <link rel="icon" type="image/x-icon" href="./images/favicon.ico">
+</head>
+<body>
+
+  <!-- 헤더 -->
+  <header class="header">
+    <!-- 왼쪽: 브랜드 -->
+    <div class="brand" id="brandMenuTrigger">
+      <a href="index.html">
+        <img src="./images/favicon.ico" alt="IKETA 로고 아이콘" class="logo-icon">
+        IKETA
+      </a>
+    </div>
+    <!-- 오른쪽: 아이콘 -->
+    <div class="icons">
+      <i class="fa-solid fa-magnifying-glass"></i> <!-- 검색 -->
+      <div class="cart-wrapper" id="cartIcon">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-badge" id="cartCount">0</span>
+      </div>
+ <!-- 🔍 검색창 오버레이 (공통 적용) -->
+<div id="searchOverlay" class="search-overlay hidden">
+  <div class="search-box">
+    <input id="searchInput" type="text" placeholder="검색어를 입력하세요" autocomplete="off">
+    <button id="closeSearch">×</button>
+
+    <!-- 🔥 빠른 링크 영역 -->
+    <div class="search-quick-links">
+      <a href="index.html">→ HOME</a><br>
+      <a href="intro.html">→ IKETA Intro</a><br>
+      <a href="store.html">→ STORE 바로가기</a><br>
+      <a href="cart.html">→ CART 바로가기</a>
+</div>
+    </div>
+  </div>
+</div>
+  </header>
+  <main class="intro">
+    <!-- 섹션 1 -->
+    <section class="zigzag">
+      <div class="zigzag-image">
+        <img src="./images/brand/brand1.jpg" alt="IKETA 시작">
+      </div>
+      <div class="zigzag-text">
+        <h2>IKETA의 시작</h2>
+        <p>
+          IKETA의 시작은 10년 전, 7평짜리 작은 방이었습니다.<br>
+          작은 공간 속에서 한 올의 매듭을 수백 번, 수천 번 쌓아 올리며,<br>
+          우리는 가능성을 찾았습니다.
+        </p>
+      </div>
+    </section>
+  
+    <!-- 섹션 2 -->
+    <section class="zigzag reverse">
+      <div class="zigzag-image">
+        <img src="./images/brand/brand2.jpg" alt="IKETA 탄생">
+      </div>
+      <div class="zigzag-text">
+        <h2>10년의 기다림</h2>
+        <p>
+          IKETA의 탄생은 단순한 열 달의 시간이 아닌,<br>
+          10년의 기다림과 집념이었습니다.<br>
+          그 긴 시간을 품고 태어난 IKETA는<br>
+          이제 하나의 ‘작품’으로 세상 앞에 섭니다.
+        </p>
+      </div>
+    </section>
+  
+    <!-- 섹션 3 -->
+    <section class="zigzag">
+      <div class="zigzag-image">
+        <img src="./images/brand/brand3.jpg" alt="IKETA의 여정">
+      </div>
+      <div class="zigzag-text">
+        <h2>앞으로의 길</h2>
+        <p>
+          앞으로 IKETA는 걸으며, 달리며,<br>
+          그리고 더 큰 길을 향해 나아갑니다.
+        </p>
+      </div>
+    </section>
+  
+    <!-- 섹션 4 -->
+    <section class="zigzag reverse">
+      <div class="zigzag-image">
+        <img src="./images/brand/brand4.jpg" alt="IKETA 매듭의 의미">
+      </div>
+      <div class="zigzag-text">
+        <h2>매듭의 의미</h2>
+        <p>
+          우리의 매듭은 단순한 장식이 아니라,<br>
+          시간과 영혼이 깃든 하나의 여정입니다.
+        </p>
+      </div>
+    </section>
+  
+    <!-- 영문 버전 -->
+    <section class="zigzag">
+      <div class="zigzag-text">
+        <h2>English</h2>
+        <p>
+          IKETA began ten years ago in a humble 7-pyeong room.<br>
+          Within that small space, we tied and untied knots countless times,<br>
+          searching for possibility.
+        </p>
+        <p>
+          Its birth was not a matter of months,<br>
+          but of a decade of perseverance and devotion.<br>
+          With that time woven into every knot,<br>
+          IKETA now stands before the world as a true work of art.
+        </p>
+        <p>
+          From here, IKETA will walk, run,<br>
+          and stride toward greater journeys.<br>
+          Every knot is not just an ornament,<br>
+          but a vessel of time and soul.
+        </p>
+      </div>
+    </section>
+  </main>
+  <!-- 푸터 -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <p class="footer-brand">IKETA</p>
+
+      <div class="footer-sns">
+        <a href="https://www.instagram.com/iketa.kr"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 인스타그램 바로가기">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+      
+        <a href="https://www.youtube.com/@iketa"
+           target="_blank"
+           rel="noopener noreferrer"
+           title="IKETA 유튜브 바로가기">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
+
+      <p class="footer-copy">© 2025 IKETA. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="product.js"></script>
+  <script src="cart.js"></script>
+</body>
+</html>
+>>>>>>> 5bdb02764fee832de8efe9b5966aae4a0736b77b
